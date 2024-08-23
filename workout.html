@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myWorkout</title>
+
+    <!--Bootstrap css hosted-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!--Bootstrap Icon font stylesheet-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&amp;family=Montserrat:wght@100;300;400;600&amp;family=Roboto:wght@100;300;500;700&amp;family=Rubik:wght@300;400;500;700&amp;family=Ubuntu:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+            Favorite Font Families
+            font-family: 'Lato', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Rubik', sans-serif;
+            font-family: 'Ubuntu', sans-serif;
+            font-family: Tahoma, Verdana, sans-serif;-->
+
+    <style>
+      body {
+        background-color: #292d3e;
+        color: #a6accd;
+        font-family: Rubik;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        width: 80%;
+        margin: 2rem auto;
+      }
+
+      section {
+        padding-bottom: 2rem;
+      }
+
+      section div {
+        padding-bottom: 3rem;
+        margin-left: 2rem;
+      }
+
+      .btn {
+        font-family: Rubik;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        margin: 2rem auto;
+      }
+
+      /* Disclaimer styling */
+      .disclaimer {
+        background-color: #402728;
+        border: 1px solid #f44336;
+        padding: 15px;
+        margin-bottom: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+
+      .row {
+        justify-content: center;
+      }
+
+      .card-header {
+        margin-left: 0;
+      }
+
+      .card {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!--     <div class="disclaimer">
+      <strong>Disclaimer:</strong> The content on this page is sourced from
+      third-party materials and is used for educational, non-commercial purposes
+      only. All rights to the content belong to the original creators or
+      copyright holders. If you are the copyright owner and believe this content
+      is being used without proper authorization, please contact us to address
+      the issue.
+    </div> -->
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> The workout content on this page is primarily
+      sourced from free resources available at
+      <a href="https://rpstrength.com/" target="_blank">RP Strength</a> and
+      videos from the
+      <a
+        href="https://www.youtube.com/channel/UCfQgsKhHjSyRLOp9mnffqVg"
+        target="_blank"
+        >Renaissance Periodization YouTube channel</a
+      >. I have selectively included portions of this content to create my own
+      workout program. All rights to the original content belong to Renaissance
+      Periodization and its creators. This material is shared here for
+      educational, non-commercial purposes only. If you are a copyright holder
+      and believe this content is being used improperly, please contact me to
+      resolve the matter. I am not responsible for any errors or omissions, or
+      for the results obtained from the use of this information. All information
+      in this site is provided "as is", with no guarantee of completeness,
+      accuracy, timeliness or of the results obtained from the use of this
+      information.
+    </div>
+    <button type="button" class="btn btn-outline-light btn-lg w-100" disabled>
+      <h1>my Workout Program</h1>
+    </button>
+    <p>
+      As you can read in the discalimer above, most of content on this page is
+      sourced from third-party materials. I have just put together the most
+      insteresting information from RP website and youtube channel to address my
+      own personal workout needs. I just needed to create this page and host it
+      somewhere free to be able to access my workout information online.
+    </p>
+
+    <!-- Workout session type #1 -->
+    <section id="workoutType1">
+      <button type="button" class="btn btn-dark btn-lg w-100">
+        WORKOUT TYPE #1
+      </button>
+      <div style="display: none; margin: auto">
+        <div class="row">
+          <div class="card col-md-5 col-sm-12 text-white bg-dark mb-3 px-0">
+            <div class="card-header">Day 1</div>
+            <div class="card-body">
+              <p class="card-text">
+                All sets are 20RM load with 1x myorep pauses. 30s breaks between
+                all sets.
+              </p>
+              <ul>
+                <li>
+                  2 sets NARROW GRIP BENCH PRESS > superset to > UNDERHAND
+                  PULLUP
+                </li>
+                <li>
+                  2 sets BARBELL UPRIGHT ROW > superset to > STANDING BARBELL
+                  SHOULDER PRESS
+                </li>
+                <li>
+                  2 sets BARBELL CURL > superset to > EZ BAR OVERHEAD TRICEPS
+                  EXTENSION
+                </li>
+                <li>
+                  2 sets DUMBELL STIFF LEGGED DEADLIFT > superset to >
+                  SHORT-STEP DUMBBELL WALKING LUNGE
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card col-md-5 col-sm-12 text-white bg-dark mb-3 px-0">
+            <div class="card-header">Day 2</div>
+            <div class="card-body">
+              <p class="card-text">
+                All sets are 20RM load with 1x myorep pauses. 30s breaks between
+                all sets.
+              </p>
+              <ul>
+                <li>
+                  2 sets TWO ARM DUMBBELL ROW > superset to > INCLINE DUMBBELL
+                  PRESS
+                </li>
+                <li>
+                  3 sets BARBELL FACEPULL (each set is 1 myorep break. drop load
+                  for each set)
+                </li>
+                <li>
+                  2 sets DUMBBELL SKULLCRUSHER > superset to > BARBELL CURL
+                </li>
+                <li>
+                  2 sets SQUAT > superset to > DUMBELL STIFF LEGGED DEADLIFT
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p>*20RM = the most weight you can lift for “20” repetitions</p>
+        <p>**Dumbbell or barbell = dealer's choice</p>
+      </div>
+    </section>
+
+    <!-- Myoreps explained -->
+    <section id="myoreps">
+      <button type="button" class="btn btn-info btn-lg w-100">MYOREPS</button>
+      <div style="display: none">
+        <p>
+          A subcategory of rest-pause sets and very useful for hypertrophy. Use
+          it for forearms, biceps, delts, traps, calves.
+        </p>
+        <div>
+          <h3><strong>HOW TO</strong></h3>
+          <hr />
+          <ul>
+            <li>Choose a load you can lift for 10-20 reps (usually)</li>
+            <li>
+              Do your first working set:
+              <ul>
+                <li>Rest enough to just get the burn out (5-10s)</li>
+                <li>Repeat. until set is below 5 reps or so</li>
+                <li>RIR is same as weekly RIR for the rest Of the program</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3><strong>UPSIDES</strong></h3>
+          <hr />
+          <ul>
+            <li>
+              Amazing stimulus especially for muscles resistant to it (forearms,
+              biceps, delts, traps, calves)
+            </li>
+            <li>Easy to sum up loads of work otherwise daunting</li>
+            <li>Saves tons of time</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3><strong>DOWNSIDES</strong></h3>
+          <hr />
+          <ul>
+            <li>
+              Can't be done with exercises that that generate system fatigue
+              (big muscle groups)
+            </li>
+            <li>
+              Pretty damn fatiguing, perhaps not something to use on ALL
+              exercises in a session
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Myoreps multiplied explained -->
+    <section id="myorepsMultiplied">
+      <button type="button" class="btn btn-info btn-lg w-100">
+        MYOREPS MATCH SETS
+      </button>
+      <div style="display: none">
+        <p>
+          Great for low-systemic muscles like biceps, calves, side/rear delts,
+          hams and RPI quads in isolation (curls, extns), lat prayers,
+          pushdowns, etc!
+        </p>
+        <div>
+          <h3><strong>HOW TO</strong></h3>
+          <hr />
+          <ul>
+            <li>
+              Myoreps: do a set of 10-20 reps, rest 2-5 seconds, do another set
+              of 5-10 reps, continue until reps drop under 3-5.
+            </li>
+            <li>
+              Myorep match sets: do one set straight first, for instance let's
+              say you get 18 reps at 2 RIR
+            </li>
+            <li>Rest a normal amount of time</li>
+            <li>
+              Do your next set and hit 18 reps AGAIN with as many myorep 3-5s
+              pauses as needed to total 18
+            </li>
+            <li>
+              Repeat that as many times as needed to hit stimulus/fatigue
+              proxies like pump and weakness
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3><strong>UPSIDES</strong></h3>
+          <hr />
+          <ul>
+            <li>Can smash stubborn muscles with tons of failure approaches</li>
+            <li>
+              Have objective first straight set with which to track performance
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drop sets explained -->
+    <section id="dropSets">
+      <button type="button" class="btn btn-info btn-lg w-100">DROP SETS</button>
+      <div style="display: none">
+        <p>
+          Great for low-systemic muscles like biceps, calves, side/rear delts,
+          hams and RPI quads in isolation (curls, extns), lat prayers,
+          pushdowns, etc!
+        </p>
+        <div>
+          <h3><strong>HOW TO</strong></h3>
+          <hr />
+          <ul>
+            <li>Do an exercise for (usually) 10-20 reps.</li>
+            <li>Reduce the load on the exercise by 10-30%</li>
+            <li>Minimal to no rest at all between sets, repeat process</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3><strong>UPSIDES</strong></h3>
+          <hr />
+          <ul>
+            <li>
+              Good stimulus for muscles that respond best to high
+              reps/metabolites (get the biggest burns)
+            </li>
+            <li>Saves a decent amount of time</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3><strong>DOWNSIDES</strong></h3>
+          <hr />
+          <ul>
+            <li>
+              Can't be done with exercises that that generate system fatigue
+              (big muscle groups)
+            </li>
+            <li>
+              Best done on cable or selectorized machines, or maybe on
+              PowerBlock dumbbells
+            </li>
+            <li>Stop when it becomes too light to avoid junk volume</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        function updateWT1Section() {
+          if ($("#workoutType1 div").is(":hidden")) {
+            $("#workoutType1 .btn")
+              .addClass("btn-light")
+              .removeClass("btn-dark");
+          } else {
+            $("#workoutType1 .btn")
+              .addClass("btn-dark")
+              .removeClass("btn-light");
+          }
+        }
+
+        function updateMRSection() {
+          if ($("#myoreps div").is(":hidden")) {
+            $("#myoreps .btn").addClass("btn-info").removeClass("btn-dark");
+          } else {
+            $("#myoreps .btn").addClass("btn-dark").removeClass("btn-info");
+          }
+        }
+
+        function updateMRMSection() {
+          if ($("#myorepsMultiplied div").is(":hidden")) {
+            $("#myorepsMultiplied .btn")
+              .addClass("btn-info")
+              .removeClass("btn-dark");
+          } else {
+            $("#myorepsMultiplied .btn")
+              .addClass("btn-dark")
+              .removeClass("btn-info");
+          }
+        }
+
+        function updateDSSection() {
+          if ($("#dropSets div").is(":hidden")) {
+            $("#dropSets .btn").addClass("btn-info").removeClass("btn-dark");
+          } else {
+            $("#dropSets .btn").addClass("btn-dark").removeClass("btn-info");
+          }
+        }
+
+        function slideToggleContent() {
+          $(".btn").on("click", function () {
+            $(this)
+              .siblings("div")
+              .slideToggle("slow", function () {
+                // Update the button color after the toggle is complete
+                console.log("Toggle complete, updating color"); // Debugging
+                updateWT1Section();
+                updateMRSection();
+                updateMRMSection();
+                updateDSSection();
+              });
+          });
+        }
+
+        slideToggleContent();
+        updateWT1Section();
+        updateMRSection();
+        updateMRMSection();
+        updateDSSection();
+      });
+    </script>
+  </body>
+</html>
