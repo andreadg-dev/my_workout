@@ -28,55 +28,7 @@
       rel="stylesheet"
     />
 
-    <style>
-      body {
-        background-color: #292d3e;
-        color: #a6accd;
-        font-family: Rubik;
-        font-size: 1.6rem;
-        line-height: 1.6;
-        width: 80%;
-        margin: 2rem auto;
-      }
-
-      section {
-        padding-bottom: 2rem;
-      }
-
-      section div {
-        padding-bottom: 3rem;
-        margin-left: 2rem;
-      }
-
-      .btn {
-        font-family: Rubik;
-        font-size: 1.6rem;
-        line-height: 1.6;
-        margin: 2rem auto;
-      }
-
-      /* Disclaimer styling */
-      .disclaimer {
-        background-color: #402728;
-        border: 1px solid #f44336;
-        padding: 15px;
-        margin-bottom: 20px;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-      }
-
-      .row {
-        justify-content: center;
-      }
-
-      .card-header {
-        margin-left: 0;
-      }
-
-      .card {
-        margin: 1rem;
-      }
-    </style>
+    <link rel="stylesheet" href="myStyles.css" />
   </head>
   <body>
     <!--     <div class="disclaimer">
@@ -346,6 +298,7 @@
             $("#workoutType1 .btn")
               .addClass("btn-light")
               .removeClass("btn-dark");
+            $("#workoutType1").css("padding-bottom", "0");
           } else {
             $("#workoutType1 .btn")
               .addClass("btn-dark")
@@ -356,6 +309,7 @@
         function updateMRSection() {
           if ($("#myoreps div").is(":hidden")) {
             $("#myoreps .btn").addClass("btn-info").removeClass("btn-dark");
+            $("#myoreps").css("padding-bottom", "0");
           } else {
             $("#myoreps .btn").addClass("btn-dark").removeClass("btn-info");
           }
@@ -366,6 +320,7 @@
             $("#myorepsMultiplied .btn")
               .addClass("btn-info")
               .removeClass("btn-dark");
+            $("#myorepsMultiplied").css("padding-bottom", "0");
           } else {
             $("#myorepsMultiplied .btn")
               .addClass("btn-dark")
@@ -376,6 +331,7 @@
         function updateDSSection() {
           if ($("#dropSets div").is(":hidden")) {
             $("#dropSets .btn").addClass("btn-info").removeClass("btn-dark");
+            $("#dropSets").css("padding-bottom", "0");
           } else {
             $("#dropSets .btn").addClass("btn-dark").removeClass("btn-info");
           }

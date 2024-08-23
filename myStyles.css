@@ -1,0 +1,64 @@
+@charset 'UTF-8';
+
+/* Common Breakpoints - use them to make your website even more responsive and set different css styles depedning on the size of the viewport/screen */
+@media (max-width: 480px) {
+    body{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+} /*Mobile devices*/
+@media (min-width: 481px) {
+    body{
+        width: 80%;
+    };
+} /*iPads, Tablets*/
+@media (max-width: 1024px) {} /*Small screens, laptops*/
+@media (max-width: 1200px) {} /*Desktops, large screens*/
+
+
+body {
+    background-color: #292d3e;
+    color: #a6accd;
+    font-family: Rubik;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    margin: 2rem auto;
+  }
+
+  section {
+    padding-bottom: 2rem;
+  }
+
+  section div {
+    padding-bottom: 3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .btn {
+    font-family: Rubik;
+    font-size: 1.3rem;
+    margin: 2rem auto;
+  }
+
+  /* Disclaimer styling */
+  .disclaimer {
+    background-color: #402728;
+    border: 1px solid #f44336;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .row {
+    justify-content: center;
+  }
+
+  .card-header {
+    margin-left: 0;
+  }
+
+  .card {
+    margin: 1rem;
+  }
