@@ -70,6 +70,37 @@
       somewhere free to be able to access my workout information online.
     </p>
 
+    <!-- My tenets -->
+    <section id="myTenets">
+      <button type="button" class="btn btn-info btn-lg w-100">MY TENETS</button>
+      <div style="display: none">
+        <ul style="list-style-type: none">
+          <li>
+            <strong>Sets</strong>: Normal sets, Myoreps, Myoreps Match sets,
+            Drop sets, Supersets
+          </li>
+          <li>
+            <strong>Range of motion</strong>: Full ROM or at least Lengthened
+            partials
+          </li>
+          <li>
+            <strong>Reps execution</strong>: Slow or controlled eccentric,
+            explosive concentric movements
+          </li>
+          <li>
+            <strong>Reps range</strong>: min 5 max 30. Use different reps ranges
+            depending on systemic fatigue to avoid incorrect technique and
+            injuries
+          </li>
+          <li>
+            <strong>RIR</strong>: Sets in the range of RIR 2 to 0 and the last
+            one always to RIR 0
+          </li>
+          <li><strong>Pump</strong>: yes, please</li>
+        </ul>
+      </div>
+    </section>
+
     <!-- My favourite exercises -->
     <section id="myFavExerc">
       <button type="button" class="btn btn-info btn-lg w-100">
@@ -413,6 +444,15 @@
     <script src="jquery.js"></script>
     <script>
       $(document).ready(function () {
+        function updateMyTenets() {
+          if ($("#myTenets div").is(":hidden")) {
+            $("#myTenets .btn").addClass("btn-light").removeClass("btn-dark");
+            $("#myTenets").css("padding-bottom", "0");
+          } else {
+            $("#myTenets .btn").addClass("btn-dark").removeClass("btn-light");
+          }
+        }
+
         function updateMyFavExSection() {
           if ($("#myFavExerc div").is(":hidden")) {
             $("#myFavExerc .btn").addClass("btn-light").removeClass("btn-dark");
@@ -473,6 +513,7 @@
               .slideToggle("slow", function () {
                 // Update the button color after the toggle is complete
                 console.log("Toggle complete, updating color"); // Debugging
+                updateMyTenets();
                 updateMyFavExSection();
                 updateWT1Section();
                 updateMRSection();
@@ -483,6 +524,7 @@
         }
 
         slideToggleContent();
+        updateMyTenets();
         updateMyFavExSection();
         updateWT1Section();
         updateMRSection();
