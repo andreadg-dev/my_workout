@@ -62,3 +62,15 @@ body {
   .card {
     margin: 1rem;
   }
+
+  #myFavExerc .card{
+    padding-bottom: 0; 
+    max-width: 20rem
+  }
+
+
+  #myFavExerc .card-header{
+    justify-content: center; 
+    display: grid; 
+    margin-right: 0;
+  }
