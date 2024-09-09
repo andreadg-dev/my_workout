@@ -38,6 +38,7 @@ function slideToggleContent() {
 // Initial setup
 slideToggleContent();
 updateSection("#myTenets");
+updateSection("#myFavExercBW");
 updateSection("#myFavExerc");
 updateSection("#workoutType1");
 updateSection("#myoreps", "btn-info", "btn-dark");

@@ -63,14 +63,16 @@ body {
     margin: 1rem;
   }
 
-  #myFavExerc .card{
+  .card{
     padding-bottom: 0; 
     max-width: 20rem
   }
 
 
-  #myFavExerc .card-header{
+  .card-header{
     justify-content: center; 
     display: grid; 
     margin-right: 0;
   }
+
+  .bg-light{background-color: white!important;}
