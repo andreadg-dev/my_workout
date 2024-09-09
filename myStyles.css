@@ -6,11 +6,21 @@
         padding-left: 1rem;
         padding-right: 1rem;
     }
+
+    .card{
+      max-width: 20rem
+    }
+
 } /*Mobile devices*/
 @media (min-width: 481px) {
     body{
         width: 80%;
     };
+
+    .card{
+      padding-bottom: 0; 
+      max-width: 25rem
+    }
 } /*iPads, Tablets*/
 @media (max-width: 1024px) {} /*Small screens, laptops*/
 @media (max-width: 1200px) {} /*Desktops, large screens*/
@@ -63,10 +73,7 @@ body {
     margin: 1rem;
   }
 
-  .card{
-    padding-bottom: 0; 
-    max-width: 20rem
-  }
+  .card{padding-bottom: 0;}
 
 
   .card-header{
