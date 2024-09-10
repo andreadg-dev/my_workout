@@ -30,8 +30,42 @@
 
     <link rel="stylesheet" href="myStyles.css" />
   </head>
-  <body>
-    <!--     <div class="disclaimer">
+  <body class="darkmode">
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" id="brand" href="#">my Workout Program</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <div class="d-flex">
+            <!-- <button class="btn btn-outline-light" type="submit">Toggle</button> -->
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-dark active" id="darkmode">
+                <i class="bi bi-moon-stars"></i>
+              </label>
+              <label class="btn btn-light" id="lightmode">
+                <i class="bi bi-brightness-high"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!--     <div class="disclaimer">
       <strong>Disclaimer:</strong> The content on this page is sourced from
       third-party materials and is used for educational, non-commercial purposes
       only. All rights to the content belong to the original creators or
@@ -39,418 +73,430 @@
       is being used without proper authorization, please contact us to address
       the issue.
     </div> -->
-    <div class="disclaimer">
-      <strong>Disclaimer:</strong> The workout content on this page is primarily
-      sourced from free resources available at
-      <a href="https://rpstrength.com/" target="_blank">RP Strength</a> and
-      videos from the
-      <a
-        href="https://www.youtube.com/channel/UCfQgsKhHjSyRLOp9mnffqVg"
-        target="_blank"
-        >Renaissance Periodization YouTube channel</a
-      >. I have selectively included portions of this content to create my own
-      workout program. All rights to the original content belong to Renaissance
-      Periodization and its creators. This material is shared here for
-      educational, non-commercial purposes only. If you are a copyright holder
-      and believe this content is being used improperly, please contact me to
-      resolve the matter. I am not responsible for any errors or omissions, or
-      for the results obtained from the use of this information. All information
-      in this site is provided "as is", with no guarantee of completeness,
-      accuracy, timeliness or of the results obtained from the use of this
-      information.
-    </div>
-    <button type="button" class="btn btn-outline-light btn-lg w-100" disabled>
-      <h1>my Workout Program</h1>
-    </button>
-    <p>
-      As you can read in the discalimer above, most of content on this page is
-      sourced from third-party materials. I have just put together the most
-      insteresting information from RP website and youtube channel to address my
-      own personal workout needs. I just needed to create this page and host it
-      somewhere free to be able to access my workout information online.
-    </p>
-
-    <!-- My tenets -->
-    <section id="myTenets">
-      <button type="button" class="btn btn-info btn-lg w-100">MY TENETS</button>
-      <div style="display: none">
-        <ul style="list-style-type: none">
-          <li>
-            <strong>Sets</strong>: Myoreps Match sets, Supersets, Drop sets and
-            Myoreps if under a time constraint. If not normal sets
-          </li>
-          <li>
-            <strong>Range of motion</strong>: Full ROM or at least Lengthened
-            partials
-          </li>
-          <li>
-            <strong>Reps execution</strong>: Slow or controlled eccentric,
-            explosive concentric movements
-          </li>
-          <li>
-            <strong>Reps range</strong>: min 5 max 30. Use different reps ranges
-            depending on systemic fatigue to avoid incorrect technique and
-            injuries
-          </li>
-          <li>
-            <strong>RIR</strong>: Sets in the range of RIR 2 to 0 and the last
-            one always to RIR 0
-          </li>
-          <li><strong>Pump</strong>: yes, please</li>
-          <li>
-            <strong>Avoid junk volume</strong>: Max 6 sets per day per muscle
-            with a RIR 0/2 within 5 to 30 reps range
-          </li>
-          <li><strong>Progressive overload</strong>: Add weight or reps</li>
-          <li>
-            <strong>Weekly schedule</strong>: 3 to 5 workout sessions per week
-          </li>
-        </ul>
+      <div class="btn btn-warning disabled">
+        <strong>Disclaimer:</strong> The workout content on this page is
+        primarily sourced from free resources available at
+        <a href="https://rpstrength.com/" target="_blank">RP Strength</a> and
+        videos from the
+        <a
+          href="https://www.youtube.com/channel/UCfQgsKhHjSyRLOp9mnffqVg"
+          target="_blank"
+          >Renaissance Periodization YouTube channel</a
+        >. I have selectively included portions of this content to create my own
+        workout program. All rights to the original content belong to
+        Renaissance Periodization and its creators. This material is shared here
+        for educational, non-commercial purposes only. If you are a copyright
+        holder and believe this content is being used improperly, please contact
+        me to resolve the matter. I am not responsible for any errors or
+        omissions, or for the results obtained from the use of this information.
+        All information in this site is provided "as is", with no guarantee of
+        completeness, accuracy, timeliness or of the results obtained from the
+        use of this information.
       </div>
-    </section>
+      <p>
+        As you can read in the discalimer above, most of content on this page is
+        sourced from third-party materials. I have just put together the most
+        insteresting information from RP website and youtube channel to address
+        my own personal workout needs. I just needed to create this page and
+        host it somewhere free to be able to access my workout information
+        online.
+      </p>
 
-    <!-- My favourite exercises -->
-    <section id="myFavExercBW">
-      <button type="button" class="btn btn-info btn-lg w-100">
-        MY FAVOURITE BODYWEIGHT EXERCISES
-      </button>
-      <div style="display: none">
-        <p>
-          I have included this section to groups exercises I can do without
-          weights in case I am on holidays for instance.
-        </p>
-        <div class="row">
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-              <strong>UPPER BODY</strong>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Pushups</li>
-              <li class="list-group-item">Skullcrusher Pushups</li>
-              <li class="list-group-item">Rack Chin</li>
-              <li class="list-group-item">Pullups</li>
-              <li class="list-group-item">Australian Pullups</li>
-              <li class="list-group-item">Vertical Pushups</li>
-            </ul>
-          </div>
-
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-              <strong>LOWER BOY</strong>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Sissy Squats</li>
-              <li class="list-group-item">Bulgarian Split Squats</li>
-              <li class="list-group-item">One-leg Hip Thrusts</li>
-              <li class="list-group-item">Single Leg Stair Claves</li>
-            </ul>
-          </div>
+      <!-- My tenets -->
+      <section id="myTenets">
+        <button type="button" class="btn btn-info btn-lg w-100">
+          MY TENETS
+        </button>
+        <div style="display: none">
+          <ul style="list-style-type: none">
+            <li>
+              <strong>Sets</strong>: Myoreps Match sets, Supersets, Drop sets
+              and Myoreps if under a time constraint. If not normal sets
+            </li>
+            <li>
+              <strong>Range of motion</strong>: Full ROM or at least Lengthened
+              partials
+            </li>
+            <li>
+              <strong>Reps execution</strong>: Slow or controlled eccentric,
+              explosive concentric movements
+            </li>
+            <li>
+              <strong>Reps range</strong>: min 5 max 30. Use different reps
+              ranges depending on systemic fatigue to avoid incorrect technique
+              and injuries
+            </li>
+            <li>
+              <strong>RIR</strong>: Sets in the range of RIR 2 to 0 and the last
+              one always to RIR 0
+            </li>
+            <li><strong>Pump</strong>: yes, please</li>
+            <li>
+              <strong>Avoid junk volume</strong>: Max 6 sets per day per muscle
+              with a RIR 0/2 within 5 to 30 reps range
+            </li>
+            <li><strong>Progressive overload</strong>: Add weight or reps</li>
+            <li>
+              <strong>Weekly schedule</strong>: 3 to 5 workout sessions per week
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- My favourite exercises -->
-    <section id="myFavExerc">
-      <button type="button" class="btn btn-info btn-lg w-100">
-        MY FAVOURITE EXERCISES
-      </button>
-      <div style="display: none">
-        <div class="row">
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-              <strong>TRICEPS</strong>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Overhead Triceps Extensions</li>
-              <li class="list-group-item">Skull Crushers</li>
-            </ul>
-          </div>
-
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-              <strong>BICEPS</strong>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Seated Incline Biceps Curls</li>
-              <li class="list-group-item">Biceps Preacher Curls</li>
-            </ul>
-          </div>
-
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-              <strong>CHEST</strong>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Bench Press</li>
-              <li class="list-group-item">Incline Bench Press</li>
-              <li class="list-group-item">Flyes</li>
-              <li class="list-group-item">Weighted Pushups</li>
-            </ul>
-          </div>
-
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-              <strong>BACK</strong>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Incline Bench Rows</li>
-              <li class="list-group-item">Inverted Rows</li>
-              <li class="list-group-item">Pullups</li>
-              <li class="list-group-item">Bench Pullovers</li>
-              <li class="list-group-item">Lat Prayers</li>
-              <li class="list-group-item">Bent Over Rows</li>
-            </ul>
-          </div>
-
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-              <strong>DELTS</strong>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Upright Rows</li>
-              <li class="list-group-item">Lying Side Raises</li>
-              <li class="list-group-item">Thumbs Down Lateral Raises</li>
-              <li class="list-group-item">Behind the Neck Press</li>
-            </ul>
-          </div>
-
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-              <strong>LEGS</strong>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Sissy Squats</li>
-              <li class="list-group-item">Romanian Deadlifts</li>
-              <li class="list-group-item">Split Squats</li>
-            </ul>
-          </div>
-
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-              <strong>TRAPS & FOREARMS</strong>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Wrists Curls</li>
-              <li class="list-group-item">Wide Grip Shrugs</li>
-              <li class="list-group-item">Overhead Shrugs</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Workout session type #1 -->
-    <section id="workoutType1">
-      <button type="button" class="btn btn-dark btn-lg w-100">
-        WORKOUT EXAMPLE #1
-      </button>
-      <div style="display: none; margin: auto">
-        <div class="row">
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header"><strong>Day 1</strong></div>
-            <div class="card-body">
-              <p class="card-text">
-                All sets are 20RM load with 1x myorep pauses. 30s breaks between
-                all sets.
-              </p>
-              <ul>
-                <li>2 sets BENCH PRESS > superset to > PULLUPS</li>
-                <li>
-                  2 sets UPRIGHT ROWS > superset to > BEHIND THE NECK PRESS
-                </li>
-                <li>
-                  2 sets SEATED INCLINE BICEPS CURLS > superset to > OVERHEAD
-                  TRICEPS EXTENSIONS
-                </li>
-                <li>2 sets ROMANIAN DEADLIFTS > superset to > SPLIT SQUATS</li>
+      <!-- My favourite exercises -->
+      <section id="myFavExercBW">
+        <button type="button" class="btn btn-info btn-lg w-100">
+          MY FAVOURITE BODYWEIGHT EXERCISES
+        </button>
+        <div style="display: none">
+          <p>
+            I have included this section to groups exercises I can do without
+            weights in case I am on holidays for instance.
+          </p>
+          <div class="row">
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header">
+                <strong>UPPER BODY</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Pushups</li>
+                <li class="list-group-item">Skullcrusher Pushups</li>
+                <li class="list-group-item">Rack Chin</li>
+                <li class="list-group-item">Pullups</li>
+                <li class="list-group-item">Australian Pullups</li>
+                <li class="list-group-item">Vertical Pushups</li>
               </ul>
             </div>
-          </div>
-          <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header"><strong>Day 2</strong></div>
-            <div class="card-body">
-              <p class="card-text">
-                All sets are 20RM load with 1x myorep pauses. 30s breaks between
-                all sets.
-              </p>
-              <ul>
-                <li>
-                  2 sets INCLINE BENCH ROW > superset to > INCLINE BENCH PRESS
-                </li>
-                <li>
-                  3 sets BARBELL FACEPULLS (each set is 1 myorep break. drop
-                  load for each set)
-                </li>
-                <li>2 sets SKULL CRUSHERS > superset to > PREACHER CURLS</li>
-                <li>2 sets SISSY SQUATS > superset to > ROMANIAN DEADLIFTS</li>
+
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header">
+                <strong>LOWER BOY</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Sissy Squats</li>
+                <li class="list-group-item">Bulgarian Split Squats</li>
+                <li class="list-group-item">One-leg Hip Thrusts</li>
+                <li class="list-group-item">Single Leg Stair Claves</li>
               </ul>
             </div>
           </div>
         </div>
-        <p>*20RM = the most weight you can lift for “20” repetitions</p>
-        <p>**Dumbbell or barbell = dealer's choice</p>
-      </div>
-    </section>
+      </section>
 
-    <!-- Myoreps explained -->
-    <section id="myoreps">
-      <button type="button" class="btn btn-info btn-lg w-100">MYOREPS</button>
-      <div style="display: none">
-        <p>
-          A subcategory of rest-pause sets and very useful for hypertrophy. Use
-          it for forearms, biceps, delts, traps, calves.
-        </p>
-        <div>
-          <h3><strong>HOW TO</strong></h3>
-          <hr />
-          <ul>
-            <li>Choose a load you can lift for 10-20 reps (usually)</li>
-            <li>
-              Do your first working set:
-              <ul>
-                <li>Rest enough to just get the burn out (5-10s)</li>
-                <li>Repeat. until set is below 5 reps or so</li>
-                <li>RIR is same as weekly RIR for the rest Of the program</li>
+      <!-- My favourite exercises -->
+      <section id="myFavExerc">
+        <button type="button" class="btn btn-info btn-lg w-100">
+          MY FAVOURITE EXERCISES
+        </button>
+        <div style="display: none">
+          <div class="row">
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header">
+                <strong>TRICEPS</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Overhead Triceps Extensions</li>
+                <li class="list-group-item">Skull Crushers</li>
               </ul>
-            </li>
-          </ul>
-        </div>
+            </div>
 
-        <div>
-          <h3><strong>UPSIDES</strong></h3>
-          <hr />
-          <ul>
-            <li>
-              Amazing stimulus especially for muscles resistant to it (forearms,
-              biceps, delts, traps, calves)
-            </li>
-            <li>Easy to sum up loads of work otherwise daunting</li>
-            <li>Saves tons of time</li>
-          </ul>
-        </div>
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header">
+                <strong>BICEPS</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Seated Incline Biceps Curls</li>
+                <li class="list-group-item">Biceps Preacher Curls</li>
+              </ul>
+            </div>
 
-        <div>
-          <h3><strong>DOWNSIDES</strong></h3>
-          <hr />
-          <ul>
-            <li>
-              Can't be done with exercises that that generate system fatigue
-              (big muscle groups)
-            </li>
-            <li>
-              Pretty damn fatiguing, perhaps not something to use on ALL
-              exercises in a session
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header">
+                <strong>CHEST</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Bench Press</li>
+                <li class="list-group-item">Incline Bench Press</li>
+                <li class="list-group-item">Flyes</li>
+                <li class="list-group-item">Weighted Pushups</li>
+              </ul>
+            </div>
 
-    <!-- Myoreps multiplied explained -->
-    <section id="myorepsMultiplied">
-      <button type="button" class="btn btn-info btn-lg w-100">
-        MYOREPS MATCH SETS
-      </button>
-      <div style="display: none">
-        <p>
-          Great for low-systemic muscles like biceps, calves, side/rear delts,
-          hams and RPI quads in isolation (curls, extns), lat prayers,
-          pushdowns, etc!
-        </p>
-        <div>
-          <h3><strong>HOW TO</strong></h3>
-          <hr />
-          <ul>
-            <li>
-              Myoreps: do a set of 10-20 reps, rest 2-5 seconds, do another set
-              of 5-10 reps, continue until reps drop under 3-5.
-            </li>
-            <li>
-              Myorep match sets: do one set straight first, for instance let's
-              say you get 18 reps at 2 RIR
-            </li>
-            <li>Rest a normal amount of time</li>
-            <li>
-              Do your next set and hit 18 reps AGAIN with as many myorep 3-5s
-              pauses as needed to total 18
-            </li>
-            <li>
-              Repeat that as many times as needed to hit stimulus/fatigue
-              proxies like pump and weakness
-            </li>
-          </ul>
-        </div>
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header">
+                <strong>BACK</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Incline Bench Rows</li>
+                <li class="list-group-item">Inverted Rows</li>
+                <li class="list-group-item">Pullups</li>
+                <li class="list-group-item">Bench Pullovers</li>
+                <li class="list-group-item">Lat Prayers</li>
+                <li class="list-group-item">Bent Over Rows</li>
+              </ul>
+            </div>
 
-        <div>
-          <h3><strong>UPSIDES</strong></h3>
-          <hr />
-          <ul>
-            <li>Can smash stubborn muscles with tons of failure approaches</li>
-            <li>
-              Have objective first straight set with which to track performance
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header">
+                <strong>DELTS</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Upright Rows</li>
+                <li class="list-group-item">Lying Side Raises</li>
+                <li class="list-group-item">Thumbs Down Lateral Raises</li>
+                <li class="list-group-item">Behind the Neck Press</li>
+              </ul>
+            </div>
 
-    <!-- Drop sets explained -->
-    <section id="dropSets">
-      <button type="button" class="btn btn-info btn-lg w-100">DROP SETS</button>
-      <div style="display: none">
-        <p>
-          Great for low-systemic muscles like biceps, calves, side/rear delts,
-          hams and RPI quads in isolation (curls, extns), lat prayers,
-          pushdowns, etc!
-        </p>
-        <div>
-          <h3><strong>HOW TO</strong></h3>
-          <hr />
-          <ul>
-            <li>Do an exercise for (usually) 10-20 reps.</li>
-            <li>Reduce the load on the exercise by 10-30%</li>
-            <li>Minimal to no rest at all between sets, repeat process</li>
-          </ul>
-        </div>
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header">
+                <strong>LEGS</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Sissy Squats</li>
+                <li class="list-group-item">Romanian Deadlifts</li>
+                <li class="list-group-item">Split Squats</li>
+              </ul>
+            </div>
 
-        <div>
-          <h3><strong>UPSIDES</strong></h3>
-          <hr />
-          <ul>
-            <li>
-              Good stimulus for muscles that respond best to high
-              reps/metabolites (get the biggest burns)
-            </li>
-            <li>Saves a decent amount of time</li>
-          </ul>
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header">
+                <strong>TRAPS & FOREARMS</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Wrists Curls</li>
+                <li class="list-group-item">Wide Grip Shrugs</li>
+                <li class="list-group-item">Overhead Shrugs</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div>
-          <h3><strong>DOWNSIDES</strong></h3>
-          <hr />
-          <ul>
-            <li>
-              Can't be done with exercises that that generate system fatigue
-              (big muscle groups)
-            </li>
-            <li>
-              Best done on cable or selectorized machines, or maybe on
-              PowerBlock dumbbells
-            </li>
-            <li>Stop when it becomes too light to avoid junk volume</li>
-          </ul>
+      <!-- Workout session type #1 -->
+      <section id="workoutType1">
+        <button type="button" class="btn btn-dark btn-lg w-100">
+          WORKOUT EXAMPLE #1
+        </button>
+        <div style="display: none; margin: auto">
+          <div class="row">
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header"><strong>Day 1</strong></div>
+              <div class="card-body">
+                <p class="card-text">
+                  All sets are 20RM load with 1x myorep pauses. 30s breaks
+                  between all sets.
+                </p>
+                <ul>
+                  <li>2 sets BENCH PRESS > superset to > PULLUPS</li>
+                  <li>
+                    2 sets UPRIGHT ROWS > superset to > BEHIND THE NECK PRESS
+                  </li>
+                  <li>
+                    2 sets SEATED INCLINE BICEPS CURLS > superset to > OVERHEAD
+                    TRICEPS EXTENSIONS
+                  </li>
+                  <li>
+                    2 sets ROMANIAN DEADLIFTS > superset to > SPLIT SQUATS
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header"><strong>Day 2</strong></div>
+              <div class="card-body">
+                <p class="card-text">
+                  All sets are 20RM load with 1x myorep pauses. 30s breaks
+                  between all sets.
+                </p>
+                <ul>
+                  <li>
+                    2 sets INCLINE BENCH ROW > superset to > INCLINE BENCH PRESS
+                  </li>
+                  <li>
+                    3 sets BARBELL FACEPULLS (each set is 1 myorep break. drop
+                    load for each set)
+                  </li>
+                  <li>2 sets SKULL CRUSHERS > superset to > PREACHER CURLS</li>
+                  <li>
+                    2 sets SISSY SQUATS > superset to > ROMANIAN DEADLIFTS
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p>*20RM = the most weight you can lift for “20” repetitions</p>
+          <p>**Dumbbell or barbell = dealer's choice</p>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- Myoreps explained -->
+      <section id="myoreps">
+        <button type="button" class="btn btn-info btn-lg w-100">MYOREPS</button>
+        <div style="display: none">
+          <p>
+            A subcategory of rest-pause sets and very useful for hypertrophy.
+            Use it for forearms, biceps, delts, traps, calves.
+          </p>
+          <div>
+            <h3><strong>HOW TO</strong></h3>
+            <hr />
+            <ul>
+              <li>Choose a load you can lift for 10-20 reps (usually)</li>
+              <li>
+                Do your first working set:
+                <ul>
+                  <li>Rest enough to just get the burn out (5-10s)</li>
+                  <li>Repeat. until set is below 5 reps or so</li>
+                  <li>RIR is same as weekly RIR for the rest Of the program</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3><strong>UPSIDES</strong></h3>
+            <hr />
+            <ul>
+              <li>
+                Amazing stimulus especially for muscles resistant to it
+                (forearms, biceps, delts, traps, calves)
+              </li>
+              <li>Easy to sum up loads of work otherwise daunting</li>
+              <li>Saves tons of time</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3><strong>DOWNSIDES</strong></h3>
+            <hr />
+            <ul>
+              <li>
+                Can't be done with exercises that that generate system fatigue
+                (big muscle groups)
+              </li>
+              <li>
+                Pretty damn fatiguing, perhaps not something to use on ALL
+                exercises in a session
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Myoreps multiplied explained -->
+      <section id="myorepsMultiplied">
+        <button type="button" class="btn btn-info btn-lg w-100">
+          MYOREPS MATCH SETS
+        </button>
+        <div style="display: none">
+          <p>
+            Great for low-systemic muscles like biceps, calves, side/rear delts,
+            hams and RPI quads in isolation (curls, extns), lat prayers,
+            pushdowns, etc!
+          </p>
+          <div>
+            <h3><strong>HOW TO</strong></h3>
+            <hr />
+            <ul>
+              <li>
+                Myoreps: do a set of 10-20 reps, rest 2-5 seconds, do another
+                set of 5-10 reps, continue until reps drop under 3-5.
+              </li>
+              <li>
+                Myorep match sets: do one set straight first, for instance let's
+                say you get 18 reps at 2 RIR
+              </li>
+              <li>Rest a normal amount of time</li>
+              <li>
+                Do your next set and hit 18 reps AGAIN with as many myorep 3-5s
+                pauses as needed to total 18
+              </li>
+              <li>
+                Repeat that as many times as needed to hit stimulus/fatigue
+                proxies like pump and weakness
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3><strong>UPSIDES</strong></h3>
+            <hr />
+            <ul>
+              <li>
+                Can smash stubborn muscles with tons of failure approaches
+              </li>
+              <li>
+                Have objective first straight set with which to track
+                performance
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Drop sets explained -->
+      <section id="dropSets">
+        <button type="button" class="btn btn-info btn-lg w-100">
+          DROP SETS
+        </button>
+        <div style="display: none">
+          <p>
+            Great for low-systemic muscles like biceps, calves, side/rear delts,
+            hams and RPI quads in isolation (curls, extns), lat prayers,
+            pushdowns, etc!
+          </p>
+          <div>
+            <h3><strong>HOW TO</strong></h3>
+            <hr />
+            <ul>
+              <li>Do an exercise for (usually) 10-20 reps.</li>
+              <li>Reduce the load on the exercise by 10-30%</li>
+              <li>Minimal to no rest at all between sets, repeat process</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3><strong>UPSIDES</strong></h3>
+            <hr />
+            <ul>
+              <li>
+                Good stimulus for muscles that respond best to high
+                reps/metabolites (get the biggest burns)
+              </li>
+              <li>Saves a decent amount of time</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3><strong>DOWNSIDES</strong></h3>
+            <hr />
+            <ul>
+              <li>
+                Can't be done with exercises that that generate system fatigue
+                (big muscle groups)
+              </li>
+              <li>
+                Best done on cable or selectorized machines, or maybe on
+                PowerBlock dumbbells
+              </li>
+              <li>Stop when it becomes too light to avoid junk volume</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div
+        style="display: block; padding: 20px; height: 60px; width: 100%"
+      ></div>
+      <div id="copyright">Copyright ©</div>
+    </footer>
     <script src="jquery.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
     <script src="myScript.js"></script>

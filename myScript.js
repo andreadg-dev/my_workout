@@ -35,6 +35,36 @@ function slideToggleContent() {
   });
 }
 
+function setCopyright() {
+  $("#copyright").text(`Copyright ©${new Date().getFullYear()}`);
+}
+
+function updateBrandName() {
+  if (window.innerWidth <= 768) {
+    // Smartphone or small screen size
+    $("#brand").text("mWP");
+  } else {
+    // Larger screen size
+    $("#brand").text("my Workout Program");
+  }
+}
+
+// Run the function on page load and window resize
+updateBrandName(); // Initial check
+$(window).resize(updateBrandName); // Check on resize
+
+$("#darkmode").on("click", function () {
+  $("body").removeClass("lightmode").addClass("darkmode");
+  $("#lightmode").removeClass("active");
+  $("#darkmode").addClass("active");
+});
+
+$("#lightmode").on("click", function () {
+  $("body").removeClass("darkmode").addClass("lightmode");
+  $("#darkmode").removeClass("active");
+  $("#lightmode").addClass("active");
+});
+
 // Initial setup
 slideToggleContent();
 updateSection("#myTenets");
@@ -44,3 +74,4 @@ updateSection("#workoutType1");
 updateSection("#myoreps", "btn-info", "btn-dark");
 updateSection("#myorepsMultiplied", "btn-info", "btn-dark");
 updateSection("#dropSets", "btn-info", "btn-dark");
+setCopyright();
