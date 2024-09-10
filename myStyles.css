@@ -88,7 +88,12 @@ body{
   .btn-warning {
     font-family: Arial, sans-serif;
     font-size: 14px;
+    background-color: #ffc107!important;
+    color: white!important;
+    opacity: 1!important;
+    margin-top: 0;
   }
+
 
   .row {
     justify-content: center;
