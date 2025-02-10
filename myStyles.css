@@ -78,6 +78,14 @@ body{
     margin-right: 0.5rem;
   }
 
+  #countdown div {
+    padding-bottom: 0;
+  }
+
+  #countdown{
+    cursor: pointer;
+  }
+
   .btn {
     font-family: Rubik;
     font-size: 1.3rem;
@@ -105,10 +113,8 @@ body{
   .card {
     margin: 1rem;
     border: solid 1px black;
+    padding: 0;
   }
-
-  .card{padding-bottom: 0;}
-
 
   .card-header{
     justify-content: center; 

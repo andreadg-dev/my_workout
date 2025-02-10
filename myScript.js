@@ -65,13 +65,43 @@ $("#lightmode").on("click", function () {
   $("#lightmode").addClass("active");
 });
 
+function newCountDown() {
+  const countDownDate = new Date().getTime() + 5 * 60 * 1000;
+
+  const x = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("minutes").innerHTML = minutes
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("seconds").innerHTML = seconds
+      .toString()
+      .padStart(2, "0");
+
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("minutes").innerHTML = "00";
+      document.getElementById("seconds").innerHTML = "00";
+    }
+  }, 1000);
+}
+
 // Initial setup
 slideToggleContent();
 updateSection("#myTenets");
 updateSection("#myFavExercBW");
 updateSection("#myFavExerc");
 updateSection("#workoutType1");
+updateSection("#calisthenicsSkills");
 updateSection("#myoreps", "btn-info", "btn-dark");
 updateSection("#myorepsMultiplied", "btn-info", "btn-dark");
 updateSection("#dropSets", "btn-info", "btn-dark");
 setCopyright();
+
+$("#countdownBtn").on("click", function () {
+  newCountDown();
+});
