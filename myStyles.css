@@ -80,10 +80,27 @@ body{
 
   #countdown div {
     padding-bottom: 0;
+    max-width: 50rem;
+  }
+
+  #countdown span {
+    margin: 5px;
   }
 
   #countdown{
     cursor: pointer;
+  }
+
+  #countdownBtn, .controlBtn{
+    border-radius: 50%;
+  }
+
+  #calisthenicsSkills ul{
+    text-align: center;
+  }
+
+  #calisthenicsSkills .card{
+    max-width: 30rem;
   }
 
   .btn {
