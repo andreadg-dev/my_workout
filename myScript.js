@@ -66,14 +66,34 @@ $("#lightmode").on("click", function () {
 });
 
 function newCountDown() {
-  const countDownDate = new Date().getTime() + 5 * 60 * 1000;
+  const minutes = document.getElementById("countdownBtn").innerText;
+  console.log(minutes);
+
+  if (!minutes) {
+    alert("Please make sure you select a number!");
+    console.log(`The minutes variable is: ${minutes}`);
+    return `The minutes variable is: ${minutes}`;
+  }
+
+  const minutesNum = Number(minutes);
+  if (isNaN(minutesNum) || minutesNum === 0) {
+    alert("Please make sure you select a number greater than 0!");
+    console.log(`The minutes variable is: ${minutes}`);
+    return `The minutes variable is: ${minutes}`;
+  }
+
+  const SECONDS_IN_MINUTE = 60;
+  let countDownSeconds = minutes * SECONDS_IN_MINUTE;
 
   const x = setInterval(function () {
-    const now = new Date().getTime();
-    const distance = countDownDate - now;
+    countDownSeconds--;
 
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const minutes = Math.floor(countDownSeconds / 60);
+    const seconds = Math.floor(countDownSeconds % 60);
+
+    console.log(
+      `Remaining Seconds: ${countDownSeconds}\nMinutes: ${minutes}\nSeconds: ${seconds} `
+    );
 
     document.getElementById("minutes").innerHTML = minutes
       .toString()
@@ -82,7 +102,7 @@ function newCountDown() {
       .toString()
       .padStart(2, "0");
 
-    if (distance < 0) {
+    if (countDownSeconds === 0) {
       clearInterval(x);
       document.getElementById("minutes").innerHTML = "00";
       document.getElementById("seconds").innerHTML = "00";
@@ -104,4 +124,21 @@ setCopyright();
 
 $("#countdownBtn").on("click", function () {
   newCountDown();
+});
+
+$(".controlBtn").on("click", function () {
+  console.log($(this).text());
+  let symbol = $(this).text();
+  let currentCountdownNum = Number($("#countdownBtn").text());
+  if (symbol === "+") {
+    $("#countdownBtn").text(currentCountdownNum + 1);
+  }
+  if (symbol === "-") {
+    if (currentCountdownNum - 1 === 0) {
+      alert("You cannot decrease the timer any further!");
+      console.log("You cannot decrease the timer any further!");
+      return "You cannot decrease the timer any further!";
+    }
+    $("#countdownBtn").text(currentCountdownNum - 1);
+  }
 });

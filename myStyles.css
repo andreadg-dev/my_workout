@@ -92,7 +92,26 @@ body{
   }
 
   #countdownBtn, .controlBtn{
-    border-radius: 50%;
+    margin: 0;
+  }
+
+  #countdown .card-body{
+    color: black;
+  }
+
+  #countdown .card-footer{
+    margin: 0;
+    padding: 8px 16px;
+  }
+
+  .controlBtn:hover{
+    color: #af8505;
+  }
+
+  .controlBtn{
+    font-size:x-large;
+    color: black;
+    font-weight: bold;
   }
 
   #calisthenicsSkills ul{
@@ -102,6 +121,8 @@ body{
   #calisthenicsSkills .card{
     max-width: 30rem;
   }
+
+
 
   .btn {
     font-family: Rubik;
