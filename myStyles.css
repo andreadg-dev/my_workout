@@ -21,6 +21,7 @@
       padding-bottom: 0; 
       max-width: 25rem
     }
+
 } /*iPads, Tablets*/
 
 
@@ -59,6 +60,19 @@ body{
   color: black
 }
 
+.disclaimer{
+  max-height: 2rem; /* Initial height */
+  overflow: hidden; /* This is essential for ellipsis */
+  text-overflow: ellipsis; /* Now this will work */
+  cursor: pointer; /* Indicate it's clickable */
+  transition: max-height 2s ease; /* Smooth transition */
+}
+
+.disclaimer.expanded {
+  max-height: 25rem; /* Remove height restriction */
+  overflow: visible; /* Make sure the full text is shown when expanded */
+  transition: max-height 2s ease; /* Smooth transition */
+}
 
   body main {
     margin: 2rem auto;

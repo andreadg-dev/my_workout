@@ -65,48 +65,77 @@ $("#lightmode").on("click", function () {
   $("#lightmode").addClass("active");
 });
 
-function newCountDown() {
-  const minutes = document.getElementById("countdownBtn").innerText;
-  console.log(minutes);
+let countdownInterval;
+let wakeLock = null;
+async function newCountDown() {
+  const minutes = $("#countdownBtn").text();
+  //console.log(minutes);
 
   if (!minutes) {
     alert("Please make sure you select a number!");
     console.log(`The minutes variable is: ${minutes}`);
-    return `The minutes variable is: ${minutes}`;
+    return;
   }
 
   const minutesNum = Number(minutes);
   if (isNaN(minutesNum) || minutesNum === 0) {
     alert("Please make sure you select a number greater than 0!");
     console.log(`The minutes variable is: ${minutes}`);
-    return `The minutes variable is: ${minutes}`;
+    return;
   }
 
   const SECONDS_IN_MINUTE = 60;
-  let countDownSeconds = minutes * SECONDS_IN_MINUTE;
+  let countDownSeconds = minutesNum * SECONDS_IN_MINUTE;
 
-  const x = setInterval(function () {
+  if (countdownInterval) {
+    clearInterval(countdownInterval);
+    countdownInterval = null;
+    if (wakeLock) {
+      wakeLock.release().then(() => {
+        wakeLock = null;
+      });
+    }
+  }
+
+  try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    wakeLock.addEventListener("release", () => {
+      console.log("Wake Lock was released");
+    });
+    console.log("Wake Lock acquired");
+  } catch (err) {
+    console.error("Error acquiring Wake Lock:", err);
+    // Handle the error (e.g., the browser doesn't support it)
+  }
+
+  countdownInterval = setInterval(() => {
+    if (countDownSeconds === 0) {
+      // Check *first*
+      clearInterval(countdownInterval);
+      countdownInterval = null;
+      $("#minutes").text("00");
+      $("#seconds").text("00");
+      alert("Countdown Finished!");
+
+      if (wakeLock) {
+        wakeLock.release().then(() => {
+          wakeLock = null;
+        });
+        console.log("Wake Lock released");
+      }
+      return; // Important: Exit the callback early
+    }
+
     countDownSeconds--;
 
-    const minutes = Math.floor(countDownSeconds / 60);
-    const seconds = Math.floor(countDownSeconds % 60);
+    const minutesDisplay = Math.floor(countDownSeconds / 60);
+    const secondsDisplay = Math.floor(countDownSeconds % 60);
 
-    console.log(
-      `Remaining Seconds: ${countDownSeconds}\nMinutes: ${minutes}\nSeconds: ${seconds} `
-    );
+    //console.log(`Remaining Seconds: ${countDownSeconds}\nMinutes: ${minutes}\nSeconds: ${seconds} `);
+    //console.log(seconds.toString().padStart(2, "0"));
 
-    document.getElementById("minutes").innerHTML = minutes
-      .toString()
-      .padStart(2, "0");
-    document.getElementById("seconds").innerHTML = seconds
-      .toString()
-      .padStart(2, "0");
-
-    if (countDownSeconds === 0) {
-      clearInterval(x);
-      document.getElementById("minutes").innerHTML = "00";
-      document.getElementById("seconds").innerHTML = "00";
-    }
+    $("#minutes").text(minutesDisplay.toString().padStart(2, "0"));
+    $("#seconds").text(secondsDisplay.toString().padStart(2, "0"));
   }, 1000);
 }
 
@@ -123,6 +152,7 @@ updateSection("#dropSets", "btn-info", "btn-dark");
 setCopyright();
 
 $("#countdownBtn").on("click", function () {
+  let countdownInterval;
   newCountDown();
 });
 
@@ -141,4 +171,8 @@ $(".controlBtn").on("click", function () {
     }
     $("#countdownBtn").text(currentCountdownNum - 1);
   }
+});
+
+$(".disclaimer").on("click", function () {
+  $(this).toggleClass("expanded");
 });
