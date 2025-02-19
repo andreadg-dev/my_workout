@@ -108,35 +108,33 @@ async function newCountDown() {
     // Handle the error (e.g., the browser doesn't support it)
   }
 
-  countdownInterval = setInterval(() => {
-    if (countDownSeconds === 0) {
-      // Check *first*
-      clearInterval(countdownInterval);
-      countdownInterval = null;
-      $("#minutes").text("00");
-      $("#seconds").text("00");
-      alert("Countdown Finished!");
+  return new Promise((resolve) => {
+    // Return a Promise
+    countdownInterval = setInterval(() => {
+      if (countDownSeconds === 0) {
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+        $("#minutes").text("00");
+        $("#seconds").text("00");
 
-      if (wakeLock) {
-        wakeLock.release().then(() => {
-          wakeLock = null;
-        });
-        console.log("Wake Lock released");
+        if (wakeLock) {
+          wakeLock.release().then(() => {
+            wakeLock = null;
+          });
+          console.log("Wake Lock released");
+        }
+
+        resolve(); // Resolve the Promise when the countdown finishes
+        return;
       }
-      return; // Important: Exit the callback early
-    }
 
-    countDownSeconds--;
-
-    const minutesDisplay = Math.floor(countDownSeconds / 60);
-    const secondsDisplay = Math.floor(countDownSeconds % 60);
-
-    //console.log(`Remaining Seconds: ${countDownSeconds}\nMinutes: ${minutes}\nSeconds: ${seconds} `);
-    //console.log(seconds.toString().padStart(2, "0"));
-
-    $("#minutes").text(minutesDisplay.toString().padStart(2, "0"));
-    $("#seconds").text(secondsDisplay.toString().padStart(2, "0"));
-  }, 1000);
+      countDownSeconds--;
+      const minutesDisplay = Math.floor(countDownSeconds / 60);
+      const secondsDisplay = Math.floor(countDownSeconds % 60);
+      $("#minutes").text(minutesDisplay.toString().padStart(2, "0"));
+      $("#seconds").text(secondsDisplay.toString().padStart(2, "0"));
+    }, 1000);
+  });
 }
 
 /* async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
@@ -197,13 +195,22 @@ async function newCountDown() {
   }, 1000);
 } */
 
-function beep() {
+function chimes() {
   const snd = new Audio("./chime-sound.mp3");
   snd.play();
 }
 
 async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
   // ... (Your existing validation and wake lock code) ...
+  if (countdownInterval2) {
+    clearInterval(countdownInterval2);
+    countdownInterval2 = null;
+    if (wakeLock2) {
+      wakeLock2.release().then(() => {
+        wakeLock2 = null;
+      });
+    }
+  }
 
   return new Promise((resolve) => {
     // Return a Promise
@@ -225,7 +232,7 @@ async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
       htmlElement.text(seconds.toString());
       htmlElement.css("color", digitsColour);
     }, 1000);
-    beep();
+    chimes();
   });
 }
 
@@ -241,8 +248,9 @@ updateSection("#myorepsMultiplied", "btn-info", "btn-dark");
 updateSection("#dropSets", "btn-info", "btn-dark");
 setCopyright();
 
-$("#countdownBtn").on("click", function () {
-  newCountDown();
+$("#countdownBtn").on("click", async function () {
+  await newCountDown();
+  chimes();
 });
 
 $(".controlBtn").on("click", function () {

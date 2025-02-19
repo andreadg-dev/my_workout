@@ -119,6 +119,11 @@ body{
 
   #timeBasedExercises input{
     max-width: 4rem;
+    text-align: center;
+  }
+
+  #timeBasedExercises label{
+    display: block;
   }
 
   #timeBasedExercisesSeconds{
