@@ -327,7 +327,9 @@ $("#timeBasedExercisesSeconds").on("click", async function () {
     }
     let color = index % 2 === 0 ? "blue" : "red";
     let setTitle = index % 2 === 0 ? `SET ${setCounter}` : "REST";
-
+    if (index === arrayExercises.length - 1) {
+      setTitle = "LAST SET";
+    }
     console.log(index);
     console.log(setTitle);
     await newCountDownSeconds(
