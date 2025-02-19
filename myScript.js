@@ -209,7 +209,7 @@ async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
       htmlElement.css("color", digitsColour);
     }, 1000);
 
-    //chimes(); // Play chime at the start of each countdown
+    chimes(); // Play chime at the start of each countdown
   });
 }
 
