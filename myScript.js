@@ -189,7 +189,13 @@ function chimes() {
   });
 } */
 
-async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
+async function newCountDownSeconds(
+  seconds,
+  htmlElement,
+  digitsColour,
+  setTitleElement,
+  setTitle
+) {
   if (countdownInterval2) {
     clearInterval(countdownInterval2);
     countdownInterval2 = null;
@@ -207,6 +213,8 @@ async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
       seconds--;
       htmlElement.text(seconds.toString());
       htmlElement.css("color", digitsColour);
+      setTitleElement.text(setTitle);
+      setTitleElement.css("color", digitsColour);
     }, 1000);
 
     chimes(); // Play chime at the start of each countdown
@@ -287,6 +295,7 @@ $("#timeBasedExercisesSeconds").on("click", async function () {
   let setTimeSeconds = Number($("#timeForSet").val());
   let numOfExercises = Number($("#numOfExercises").val());
   let restTimeSeconds = Number($("#timeForRest").val());
+  let setTitleElement = $("#setTitle");
   arrayExercises = [];
 
   while (numOfExercises > 0) {
@@ -311,12 +320,22 @@ $("#timeBasedExercisesSeconds").on("click", async function () {
     return; // Stop execution if Wake Lock acquisition fails
   }
 
+  let setCounter = 0;
   for (let index = 0; index < arrayExercises.length; index++) {
+    if (index % 2 === 0) {
+      setCounter += 1;
+    }
     let color = index % 2 === 0 ? "blue" : "red";
+    let setTitle = index % 2 === 0 ? `SET ${setCounter}` : "REST";
+
+    console.log(index);
+    console.log(setTitle);
     await newCountDownSeconds(
       arrayExercises[index],
       timeBasedExercisesTimer,
-      color
+      color,
+      setTitleElement,
+      setTitle
     );
   }
 
