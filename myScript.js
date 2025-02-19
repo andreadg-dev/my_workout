@@ -137,20 +137,13 @@ async function newCountDown() {
   });
 }
 
+function chimes() {
+  const snd = new Audio("./chime-sound.mp3");
+  snd.play();
+}
+
 /* async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
-  if (!seconds) {
-    alert("Please make sure you select a number!");
-    console.log(`The minutes variable is: ${seconds}`);
-    return;
-  }
-
-  const secondsNum = Number(seconds);
-  if (isNaN(secondsNum) || secondsNum === 0) {
-    alert("Please make sure you select a number greater than 0!");
-    console.log(`The minutes variable is: ${seconds}`);
-    return;
-  }
-
+  // ... (Your existing validation and wake lock code) ...
   if (countdownInterval2) {
     clearInterval(countdownInterval2);
     countdownInterval2 = null;
@@ -170,46 +163,6 @@ async function newCountDown() {
   } catch (err) {
     console.error("Error acquiring Wake Lock:", err);
     // Handle the error (e.g., the browser doesn't support it)
-  }
-
-  countdownInterval2 = setInterval(() => {
-    if (seconds === 0) {
-      // Check *first*
-      clearInterval(countdownInterval2);
-      countdownInterval2 = null;
-      //alert("Countdown Finished!");
-
-      if (wakeLock2) {
-        wakeLock2.release().then(() => {
-          wakeLock2 = null;
-        });
-        console.log("Wake Lock released");
-      }
-      return; // Important: Exit the callback early
-    }
-
-    seconds--;
-
-    htmlElement.text(seconds.toString().padStart(2, "0"));
-    htmlElement.css("color", digitsColour);
-  }, 1000);
-} */
-
-function chimes() {
-  const snd = new Audio("./chime-sound.mp3");
-  snd.play();
-}
-
-async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
-  // ... (Your existing validation and wake lock code) ...
-  if (countdownInterval2) {
-    clearInterval(countdownInterval2);
-    countdownInterval2 = null;
-    if (wakeLock2) {
-      wakeLock2.release().then(() => {
-        wakeLock2 = null;
-      });
-    }
   }
 
   return new Promise((resolve) => {
@@ -233,6 +186,30 @@ async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
       htmlElement.css("color", digitsColour);
     }, 1000);
     chimes();
+  });
+} */
+
+async function newCountDownSeconds(seconds, htmlElement, digitsColour) {
+  if (countdownInterval2) {
+    clearInterval(countdownInterval2);
+    countdownInterval2 = null;
+  }
+
+  return new Promise((resolve) => {
+    countdownInterval2 = setInterval(() => {
+      if (seconds === 0) {
+        clearInterval(countdownInterval2);
+        countdownInterval2 = null;
+        resolve();
+        return;
+      }
+
+      seconds--;
+      htmlElement.text(seconds.toString());
+      htmlElement.css("color", digitsColour);
+    }, 1000);
+
+    //chimes(); // Play chime at the start of each countdown
   });
 }
 
@@ -274,7 +251,7 @@ $(".disclaimer").on("click", function () {
   $(this).toggleClass("expanded");
 });
 
-let countdownInterval2;
+/* let countdownInterval2;
 let wakeLock2 = null;
 $("#timeBasedExercisesSeconds").on("click", async function () {
   let timeBasedExercisesTimer = $("#timeBasedExercisesSeconds");
@@ -299,5 +276,59 @@ $("#timeBasedExercisesSeconds").on("click", async function () {
       timeBasedExercisesTimer,
       color
     ); // Wait for each countdown
+  }
+}); */
+
+let countdownInterval2;
+let wakeLock2 = null;
+
+$("#timeBasedExercisesSeconds").on("click", async function () {
+  let timeBasedExercisesTimer = $("#timeBasedExercisesSeconds");
+  let setTimeSeconds = Number($("#timeForSet").val());
+  let numOfExercises = Number($("#numOfExercises").val());
+  let restTimeSeconds = Number($("#timeForRest").val());
+  arrayExercises = [];
+
+  while (numOfExercises > 0) {
+    arrayExercises.push(setTimeSeconds);
+    if (numOfExercises > 1) {
+      arrayExercises.push(restTimeSeconds);
+    }
+    numOfExercises--;
+  }
+
+  console.log(arrayExercises);
+
+  try {
+    wakeLock2 = await navigator.wakeLock.request("screen");
+    wakeLock2.addEventListener("release", () => {
+      console.log("Wake Lock was released (event listener)");
+    });
+    console.log("Wake Lock acquired");
+  } catch (err) {
+    console.error("Error acquiring Wake Lock:", err);
+    // Handle the error (e.g., the browser doesn't support it)
+    return; // Stop execution if Wake Lock acquisition fails
+  }
+
+  for (let index = 0; index < arrayExercises.length; index++) {
+    let color = index % 2 === 0 ? "blue" : "red";
+    await newCountDownSeconds(
+      arrayExercises[index],
+      timeBasedExercisesTimer,
+      color
+    );
+  }
+
+  if (wakeLock2) {
+    // Check if wakeLock2 is not null before releasing
+    try {
+      await wakeLock2.release(); // Use await for proper error handling
+      wakeLock2 = null;
+      console.log("Wake Lock released");
+    } catch (err) {
+      console.error("Error releasing Wake Lock:", err);
+      // Handle the error (e.g., log it or show a message)
+    }
   }
 });
