@@ -103,12 +103,13 @@
         online.
       </p>
 
+      <!-- Simple minutes countdown timer -->
       <section id="countdown">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="card">
-                <div class="card-header bg-primary text-white">
+                <div class="card-header bg-dark text-white">
                   <h4 class="mb-0">Countdown</h4>
                 </div>
                 <div class="card-body">
@@ -136,6 +137,59 @@
                     <div class="col">
                       <p class="controlBtn" id="plusBtn">+</p>
                       <!-- <button class="btn btn-light controlBtn">+</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeBasedExercises">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header bg-dark text-white">
+                  <h4 class="mb-0">Time-based exercises</h4>
+                </div>
+                <div class="card-body">
+                  <h3 id="timeBasedExercisesSeconds" class="display-4">--</h3>
+                </div>
+                <div class="card-footer text-muted">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <label for="numOfExercises">&#x1f4aa;</label>
+                      <input
+                        type="number"
+                        name="numOfExercises"
+                        id="numOfExercises"
+                        min="1"
+                        value="4"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="timeForSet"
+                        ><i class="bi bi-clock"></i
+                      ></label>
+                      <input
+                        type="number"
+                        name="timeForSet"
+                        id="timeForSet"
+                        min="10"
+                        value="40"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="timeForRest">&#128164;</label>
+                      <input
+                        type="number"
+                        name="timeForRest"
+                        id="timeForRest"
+                        min="5"
+                        value="20"
+                      />
                     </div>
                   </div>
                 </div>

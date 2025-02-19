@@ -52,7 +52,7 @@ body{
 
 .darkmode{
   background-color: #292d3e;
-  color: #a6accd;
+  color: white; /*#a6accd*/
 }
 
 .lightmode{
@@ -97,6 +97,10 @@ body{
     max-width: 50rem;
   }
 
+  #timeBasedExercises div{
+    padding-bottom: 0;
+  }
+
   #countdown span {
     margin: 5px;
   }
@@ -109,15 +113,27 @@ body{
     margin: 0;
   }
 
-  #countdown h4{
+  #timeBasedExercises h3{
+    text-align: center;
+  }
+
+  #timeBasedExercises input{
+    max-width: 4rem;
+  }
+
+  #timeBasedExercisesSeconds{
+    font-weight: 900;
+  }
+
+  #countdown h4, #timeBasedExercises h4{
     padding-bottom: 6px;
   }
 
-  #countdown .card-body{
+  #countdown .card-body, #timeBasedExercises .card-body{
     color: black;
   }
 
-  #countdown .card-footer{
+  #countdown .card-footer, #timeBasedExercises .card-footer{
     margin: 0;
     padding: 8px 16px;
     text-align: center;
