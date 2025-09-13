@@ -1,3 +1,56 @@
+//Protein range 1.6g to 2.2g per kg
+//Macronutrient proportions: 170g protein, 70g fat, 250g carbs
+
+function addFoodItemsSection() {
+  const sectionBeginning = `
+  <section id="myFavFoods" style="padding-bottom: 0px;">
+    <button type="button" class="btn btn-info btn-lg w-100 btn-dark">
+          MY FAVORITE FOODs (WIP)
+    </button>
+    <div class="row">`;
+
+  const foodElements = FOOD_ITEMS.map((item) => {
+    return `<div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+            <div class="card-header">
+                <strong>${item.fooditem}</strong>
+            </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Food category: ${item.category}</li>
+                <li class="list-group-item">Kcal (100g)${
+                  item.kcalPer100grams
+                }</li>
+                <li class="list-group-item">Macronutrients ${JSON.stringify(
+                  item.macronutrients
+                )}</li>
+              </ul>
+        </div>`;
+  });
+
+  const foodSection = `${sectionBeginning}${foodElements.join(
+    ""
+  )}</div></section>`;
+
+  $("#rootMain").append(foodSection);
+}
+
+function appendFooter() {
+  const FOOTER = `<footer>
+      <div
+        style="display: block; padding: 20px; height: 60px; width: 100%"
+      ></div>
+      <div id="copyright">Copyright ©${new Date().getFullYear()}</div>
+    </footer>`;
+
+  $("#root").append(FOOTER);
+}
+
+const HIGH_PROTEIN_DIET = {
+  kcalDaily: 2310,
+  protein: { grams: 170, kcal: 680, percentage: 30 },
+  fat: { grams: 70, kcal: 630, percentage: 27 },
+  carbs: { grams: 250, kcal: 1000, percentage: 43 },
+};
+
 const MACRONUTRIENTS = {
   protein: { name: "protein", kcalPer1gram: 4 },
   carbs: { name: "carbs", kcalPer1gram: 4 },

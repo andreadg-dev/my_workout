@@ -32,7 +32,7 @@
     <!--Favicon-->
     <link rel="icon" href="favicon.ico" />
   </head>
-  <body class="darkmode">
+  <body class="darkmode" id="root">
     <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
       <div class="container-fluid">
@@ -66,7 +66,7 @@
       </div>
     </nav>
 
-    <main>
+    <main id="rootMain">
       <!--     <div class="disclaimer">
       <strong>Disclaimer:</strong> The content on this page is sourced from
       third-party materials and is used for educational, non-commercial purposes
@@ -705,14 +705,15 @@
       </section>
     </main>
 
-    <footer>
-      <div
-        style="display: block; padding: 20px; height: 60px; width: 100%"
-      ></div>
-      <div id="copyright">Copyright ©</div>
-    </footer>
     <script src="jquery.js"></script>
     <script src="bootstrap.js"></script>
     <script src="myScript.js"></script>
+    <script src="data.js"></script>
+    <script>
+      window.onload = (event) => {
+        addFoodItemsSection();
+        appendFooter();
+      };
+    </script>
   </body>
 </html>
