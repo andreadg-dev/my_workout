@@ -218,3 +218,27 @@ body{
   .btn-group label{
     width: 45px;
   }
+
+  #fooditems{
+    border: 1px solid white;
+    font-size: 1.2rem;
+  }
+
+  #fooditems .card-header{
+    background: #2b2454
+  }
+
+  #fooditems .list-group-item{
+    border: 0.5px solid gray;
+  }
+
+  .fooditem-name{
+    margin-bottom: 5px;
+  }
+
+  .fooditem-info{
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+
