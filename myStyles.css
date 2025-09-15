@@ -221,7 +221,7 @@ body{
 
   #fooditems{
     border: 1px solid white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   #fooditems .card-header{
@@ -236,8 +236,8 @@ body{
     margin-bottom: 5px;
   }
 
-  .fooditem-info{
-    font-size: 0.8rem;
+  .fooditem-info, .fooditem-macros{
+    font-size: 0.7rem;
     margin-bottom: 0;
   }
 
