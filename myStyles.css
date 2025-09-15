@@ -86,6 +86,14 @@ body{
     padding-bottom: 2rem;
   }
 
+  #brand{margin-left: 0.2rem;}
+
+  .brand-info{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+  }
+
   section div {
     padding-bottom: 3rem;
     margin-left: 0.5rem;
@@ -225,11 +233,37 @@ body{
   }
 
   #fooditems .card-header{
-    background: #2b2454
+    background: black;
+    color: white;
+  }
+
+  .fooditems-div, .fooditem-div-input{
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .fooditems-div-input{
+  text-align: right;
+ }
+
+  .fooditems-div-input input{
+    width: 5rem;
+    text-align: right;
+    border-radius: 1rem;
   }
 
   #fooditems .list-group-item{
     border: 0.5px solid gray;
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #fooditems .row{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
   }
 
   .fooditem-name{
@@ -241,4 +275,19 @@ body{
     margin-bottom: 0;
   }
 
+ .fooditem-macros{
+    margin: 0.5rem 0;
+    line-height: 1.5rem;
+ }
 
+ .macro-carbs, .macro-protein, .macro-fat{
+    padding: 2px 5px;
+    border-radius: 1rem;
+    border: 1px solid white;
+    white-space: nowrap;
+ }
+
+  .macro-carbs{background-color: rgb(141, 4, 4);}
+  .macro-protein{background-color: #8d6b08;}
+  .macro-fat{background-color: rgb(17, 131, 93);}
+  .macros-space{margin: 0 5px;}

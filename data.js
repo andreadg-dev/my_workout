@@ -36,16 +36,33 @@ function addFoodItemsSection() {
 
     const cardList = foodElementsGroupedByCat[category].map((item) => {
       const macros = item.macronutrients.map((macro) => {
-        return `<span>${macro.name}: ${macro.percentage} grams (${
+        return `<span class="macro-${macro.name}">${macro.name}: ${
+          macro.percentage
+        } grams (${
           MACRONUTRIENTS[macro.name].kcalPer1gram * macro.percentage
         } kcal)</span>`;
       });
 
-      return `<li class="list-group-item text-white bg-dark fooditem_${category}">
-                <p class="fooditem-name">${item.fooditem}</p>
-                <p class="fooditem-info">100g: ${item.kcalPer100grams} kcal</p>
-                <p class="fooditem-macros">Macros: ${macros.join(" - ")}</p>
-            </li>`;
+      return `<div class="row list-group-item text-white fooditem_${category}">
+                <div class="fooditems-div col">
+                    <p class="fooditem fooditem-name">${item.fooditem}</p>
+                    <p class="fooditem fooditem-info">100g: ${
+                      item.kcalPer100grams
+                    } kcal</p>
+                    <p class="fooditem fooditem-macros">Macros: ${macros.join(
+                      "<span class='macros-space'></span>"
+                    )}</p>
+                </div>
+                <div class="fooditems-div-input col">
+                    <input
+                    type="number"
+                    class="fooditemgrams"
+                    name="fooditemgrams"
+                    min="0"
+                    max="99999"
+                    value="0"/>
+                </div>
+            </div>`;
     });
 
     return `${cardTop}${cardList.join("")}</ul>`;
