@@ -1,5 +1,14 @@
 @charset 'UTF-8';
 
+:root{
+  --color-carbs: rgb(141, 4, 4);
+  --color-protein: #8d6b08;
+  --color-fat: rgb(17, 131, 93);
+  --color-carbs-text: rgb(240, 11, 11);
+  --color-protein-text: #f0b70c;
+  --color-fat-text: rgb(12, 240, 164);
+}
+
 /* Common Breakpoints - use them to make your website even more responsive and set different css styles depedning on the size of the viewport/screen */
 @media (max-width: 480px) {
     body main{
@@ -11,17 +20,21 @@
       max-width: 20rem
     }
 
+    .fooditems-div-cal{justify-content: center}
+
 } /*Mobile devices*/
+
 @media (min-width: 481px) {
-    body main{
-        width: 80%;
-    };
+    body main{width: 80%}
 
     .card{
       padding-bottom: 0; 
       max-width: 25rem
     }
 
+    #fooditems{max-width: 100%}
+
+    .fooditems-div-cal{justify-content: center}
 } /*iPads, Tablets*/
 
 
@@ -33,15 +46,18 @@
 
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1020px) {
   nav{
     max-height: 5rem;
   }
+
+  .fooditems-div-cal{justify-content: right}
 
 }
 
 @media (max-width: 1024px) {} /*Small screens, laptops*/
 @media (max-width: 1200px) {} /*Desktops, large screens*/
+
 
 
 body{    
@@ -170,8 +186,6 @@ body{
     max-width: 30rem;
   }
 
-
-
   .btn {
     font-family: Rubik;
     font-size: 1.3rem;
@@ -227,6 +241,8 @@ body{
     width: 45px;
   }
 
+
+  /*Food items section*/
   #fooditems{
     border: 1px solid white;
     font-size: 1.1rem;
@@ -237,14 +253,18 @@ body{
     color: white;
   }
 
-  .fooditems-div, .fooditem-div-input{
+  .fooditems-div, .cal-macro{
     margin-bottom: 0;
     padding-bottom: 0;
   }
 
-  .fooditems-div-input{
+  .fooditems-div-input, .fooditems-div-cal{
   text-align: right;
- }
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  }
 
   .fooditems-div-input input{
     width: 5rem;
@@ -287,7 +307,16 @@ body{
     white-space: nowrap;
  }
 
-  .macro-carbs{background-color: rgb(141, 4, 4);}
-  .macro-protein{background-color: #8d6b08;}
-  .macro-fat{background-color: rgb(17, 131, 93);}
+  .macro-carbs{background-color: var(--color-carbs);}
+  .macro-protein{background-color: var(--color-protein);}
+  .macro-fat{background-color: var(--color-fat);}
   .macros-space{margin: 0 5px;}
+
+  .cal-macro{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .cal-macro-carbs{color: var(--color-carbs-text)}
+  .cal-macro-protein{color: var(--color-protein-text)}
+  .cal-macro-fat{color: var(--color-fat-text)}

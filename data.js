@@ -43,6 +43,17 @@ function addFoodItemsSection() {
         } kcal)</span>`;
       });
 
+      const calculatedMacros = item.macronutrients.map((calMacro) => {
+        return `<div class="cal-macro cal-macro-${calMacro.name}">
+                    <span>${calMacro.name.toUpperCase()}</span> 
+                    <span>${calMacro.percentage} grams</span> 
+                    <span>${
+                      MACRONUTRIENTS[calMacro.name].kcalPer1gram *
+                      calMacro.percentage
+                    } kcal</span>
+                </div>`;
+      });
+
       return `<div class="row list-group-item text-white fooditem_${category}">
                 <div class="fooditems-div col">
                     <p class="fooditem fooditem-name">${item.fooditem}</p>
@@ -53,14 +64,17 @@ function addFoodItemsSection() {
                       "<span class='macros-space'></span>"
                     )}</p>
                 </div>
-                <div class="fooditems-div-input col">
-                    <input
-                    type="number"
-                    class="fooditemgrams"
-                    name="fooditemgrams"
-                    min="0"
-                    max="99999"
-                    value="0"/>
+                <div class="fooditems-div-cal col">
+                    ${calculatedMacros.join("")}
+                    <div class="fooditems-div-input">
+                        <input
+                        type="number"
+                        class="fooditemgrams"
+                        name="fooditemgrams"
+                        min="0"
+                        max="99999"
+                        value="0"/>
+                    </div>
                 </div>
             </div>`;
     });
