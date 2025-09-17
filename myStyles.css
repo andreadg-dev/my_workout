@@ -320,3 +320,5 @@ body{
   .cal-macro-carbs{color: var(--color-carbs-text)}
   .cal-macro-protein{color: var(--color-protein-text)}
   .cal-macro-fat{color: var(--color-fat-text)}
+
+  .cal-macro-line{white-space: nowrap;}
