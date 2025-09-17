@@ -71,6 +71,8 @@ function addFoodItemsSection() {
                 </div>
                 <div class="fooditems-div-cal col">
                     ${calculatedMacros.join("")}
+                </div>
+                <div class="fooditems-div-cal col-2">
                     <div class="fooditems-div-input">
                         <input
                         type="number"
@@ -125,6 +127,7 @@ function updateDynamicFoodItemMacros() {
             .parent()
             .parent()
             .parent()
+            .parent()
             .find(".fooditems-div")
             .attr("id")
             .replace("fooditeminfo-", "")
@@ -134,28 +137,33 @@ function updateDynamicFoodItemMacros() {
     });
 
     filteredFoodItem[0].macronutrients.map((fooditem) => {
+      const macroGrams = Number(
+        ($(this).val() * (Number(fooditem.percentage) / 100)).toFixed(1)
+      );
+
+      const macroKcal = Number(
+        (
+          $(this).val() *
+          (Number(fooditem.percentage) / 100) *
+          MACRONUTRIENTS[fooditem.name].kcalPer1gram
+        ).toFixed(1)
+      );
+
       //Updating the corresponding macro nutriens grams info depending on value typed in the input element
       $(this)
         .parent()
         .parent()
+        .parent()
         .find(`.cal-macro-line-${fooditem.name}-grams`)
-        .text(
-          ($(this).val() * (Number(fooditem.percentage) / 100)).toFixed(1) +
-            " g"
-        );
+        .text(macroGrams + " g");
 
       //Updating the corresponding macro nutriens kcal info depending on value typed in the input element
       $(this)
         .parent()
         .parent()
+        .parent()
         .find(`.cal-macro-line-${fooditem.name}-kcal`)
-        .text(
-          (
-            $(this).val() *
-            (Number(fooditem.percentage) / 100) *
-            MACRONUTRIENTS[fooditem.name].kcalPer1gram
-          ).toFixed(1) + "kcal"
-        );
+        .text(macroKcal + "kcal");
     });
   });
 }
