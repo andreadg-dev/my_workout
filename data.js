@@ -26,7 +26,7 @@ function addFoodItemsSection() {
     );
   });
 
-  console.log(foodElementsGroupedByCat);
+  //console.log(foodElementsGroupedByCat);
 
   const foodElements = Object.keys(foodElementsGroupedByCat).map((category) => {
     const cardTop = `<div class="card-header">
@@ -80,6 +80,7 @@ function addFoodItemsSection() {
                         name="fooditemgrams"
                         min="0"
                         max="99999"
+                        step="10"
                         value="0"/>
                     </div>
                 </div>
@@ -117,17 +118,14 @@ function addFoodItemsSection() {
 }
 
 function updateDynamicFoodItemMacros() {
-  $(".fooditemgrams").on("change", function () {
+  $(".fooditemgrams").on("input", function () {
     //Filtering the corresponding food item from the FOOD_ITEMS object
     const filteredFoodItem = FOOD_ITEMS.filter((fooditem) => {
       return (
         fooditem.id ===
         Number(
           $(this)
-            .parent()
-            .parent()
-            .parent()
-            .parent()
+            .closest(".list-group-item")
             .find(".fooditems-div")
             .attr("id")
             .replace("fooditeminfo-", "")
@@ -136,7 +134,7 @@ function updateDynamicFoodItemMacros() {
       );
     });
 
-    filteredFoodItem[0].macronutrients.map((fooditem) => {
+    filteredFoodItem[0].macronutrients.forEach((fooditem) => {
       const macroGrams = Number(
         ($(this).val() * (Number(fooditem.percentage) / 100)).toFixed(1)
       );
@@ -151,17 +149,13 @@ function updateDynamicFoodItemMacros() {
 
       //Updating the corresponding macro nutriens grams info depending on value typed in the input element
       $(this)
-        .parent()
-        .parent()
-        .parent()
+        .closest(".list-group-item")
         .find(`.cal-macro-line-${fooditem.name}-grams`)
         .text(macroGrams + " g");
 
       //Updating the corresponding macro nutriens kcal info depending on value typed in the input element
       $(this)
-        .parent()
-        .parent()
-        .parent()
+        .closest(".list-group-item")
         .find(`.cal-macro-line-${fooditem.name}-kcal`)
         .text(macroKcal + "kcal");
     });
