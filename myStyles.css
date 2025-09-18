@@ -32,7 +32,7 @@
       max-width: 25rem
     }
 
-    #fooditems{max-width: 100%}
+    .fooditems{max-width: 100%}
 
     .fooditems-div-cal{justify-content: center}
 } /*iPads, Tablets*/
@@ -123,6 +123,12 @@ body{
 
   #timeBasedExercises div{
     padding-bottom: 0;
+  }
+
+  #timeBasedExercises .col{
+    justify-content: center;
+    display: flex
+
   }
 
   #countdown span {
@@ -243,12 +249,27 @@ body{
 
 
   /*Food items section*/
-  #fooditems{
+ .meal-name{
+    background-color: rgb(153, 86, 216);
+    padding: 1rem;
+    border: 1px solid white;
+    border-radius: 2rem;
+ }
+
+ .meals .card-header{
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .fooditems{
     border: 1px solid white;
     font-size: 1.1rem;
+    display: none;
   }
 
-  #fooditems .card-header{
+  .fooditems .card-header{
     background: black;
     color: white;
   }
@@ -259,14 +280,16 @@ body{
   }
 
   .fooditems-div-input, .fooditems-div-cal{
-  text-align: right;
-  padding: 1rem 0;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  /* flex-wrap: wrap; */
-  gap: 0.5rem;
+    text-align: right;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* flex-wrap: wrap; */
+    gap: 0.5rem;
   }
+
+  .fooditems-div-input{flex-direction: column;}
 
   .fooditems-div-input input{
     width: 5rem;
@@ -274,14 +297,14 @@ body{
     border-radius: 1rem;
   }
 
-  #fooditems .list-group-item{
+  .fooditems .list-group-item{
     border: 0.5px solid gray;
     background-color: #343a40;
     display: flex;
     justify-content: space-between;
   }
 
-  #fooditems .row{
+  .fooditems .row{
     width: 100%;
     justify-content: center;
     align-items: center;

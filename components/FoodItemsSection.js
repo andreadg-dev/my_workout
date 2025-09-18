@@ -1,6 +1,8 @@
 //Protein range 1.6g to 2.2g per kg
 //Macronutrient proportions: 170g protein, 70g fat, 250g carbs
 
+const DAILY_MEALS = ["breakfast", "snack", "lunch", "snack", "dinner"];
+
 function addFoodItemsSection() {
   const sectionBeginning = `
   <section id="myFavFoods" style="padding-bottom: 0px;">
@@ -29,8 +31,8 @@ function addFoodItemsSection() {
   //console.log(foodElementsGroupedByCat);
 
   const foodElements = Object.keys(foodElementsGroupedByCat).map((category) => {
-    const cardTop = `<div class="card-header">
-                        <strong>${category}</strong>
+    const cardTop = `<div class="card-header card-header-${category}">
+                        <span><strong>${category}</strong></span><span class="totalgramsFoodGroup totalgrams-${category}">0 grams</span>
                     </div>
                     <ul class="list-group list-group-flush">`;
 
@@ -74,6 +76,7 @@ function addFoodItemsSection() {
                 </div>
                 <div class="fooditems-div-cal col-2">
                     <div class="fooditems-div-input">
+                        <span>grams</span>
                         <input
                         type="number"
                         class="fooditemgrams"
@@ -90,31 +93,59 @@ function addFoodItemsSection() {
     return `${cardTop}${cardList.join("")}</ul>`;
   });
 
-  /* const foodElements = FOOD_ITEMS.map((item) => {
-    return `<div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
-            <div class="card-header">
-                <strong>${item.fooditem}</strong>
-            </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Food category: ${item.category}</li>
-                <li class="list-group-item">Kcal (100g)${
-                  item.kcalPer100grams
-                }</li>
-                <li class="list-group-item">Macronutrients ${JSON.stringify(
-                  item.macronutrients
-                )}</li>
-              </ul>
-        </div>`;
-  }); */
+  const mealSections = DAILY_MEALS.map((item) => {
+    return `<div class="meals" id="meal-${item}">
+              <div class="meal-name"><strong>${item}</strong></div>
+              <div class="card text-light bg-dark mb-3 px-0 fooditems">
+                ${foodElements.join("")}
+              </div>
+            </div>`;
+  });
 
-  const foodSection = `${sectionBeginning}
+  /* const foodSection = `${sectionBeginning}
         <div class="card text-light bg-dark mb-3 px-0" id="fooditems">
             ${foodElements.join("")}
         </div>
     </div>
+  </section>`; */
+
+  const foodSection = `${sectionBeginning}
+            ${mealSections.join("")}
+    </div>
   </section>`;
 
   $("#rootMain").append(foodSection);
+}
+
+function toggleNextElementOnClick(clickedElement) {
+  $(clickedElement).on("click", function () {
+    $(this).next().toggle();
+  });
+}
+
+function updateFoodGroupGrams() {
+  $(".fooditemgrams").on("input", function () {
+    const foodGroupTotalGrams = $(this)
+      .closest(".list-group")
+      .find(".fooditemgrams")
+      .map((i, el) => Number($(el).val()))
+      .get()
+      .reduce((sum, val) => sum + val, 0);
+
+    //Update the food group total gram info in the card header
+    $(this)
+      .closest(".list-group")
+      .prev(".card-header")
+      .find(".totalgramsFoodGroup")
+      .text(`${foodGroupTotalGrams} grams`);
+
+    //Calculating total per meal
+    const mealTotalGrams = $("input.fooditemgrams")
+      .map((i, el) => Number($(el).val()))
+      .get()
+      .reduce((sum, val) => sum + val, 0);
+    console.log(mealTotalGrams);
+  });
 }
 
 function updateDynamicFoodItemMacros() {
