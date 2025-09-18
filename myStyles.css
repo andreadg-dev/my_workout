@@ -342,8 +342,32 @@ body{
     flex-direction: column;
   }
 
-  .cal-macro-carbs{color: var(--color-carbs-text)}
-  .cal-macro-protein{color: var(--color-protein-text)}
-  .cal-macro-fat{color: var(--color-fat-text)}
+  .cal-macro-carbs, .mealMacrosCalCarbs{color: var(--color-carbs-text)}
+  .cal-macro-protein, .mealMacrosCalProtein{color: var(--color-protein-text)}
+  .cal-macro-fat, .mealMacrosCalFat{color: var(--color-fat-text)}
 
   .cal-macro-line{white-space: nowrap;}
+
+  .meal-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .mealMacros{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid white;
+  }
+
+  .mealMacrosCal{
+    display: flex;
+    flex-direction: column;
+  }

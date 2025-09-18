@@ -725,6 +725,16 @@
         updateFoodGroupGrams();
         toggleNextElementOnClick(".meal-name");
         toggleNextElementOnClick(".meals .card-header");
+
+        //Updating meal macros grams
+        updateMealMacrosGrams("carbs");
+        updateMealMacrosGrams("protein");
+        updateMealMacrosGrams("fat");
+
+        //Updating meal macros kcal
+        updateMealMacrosKcal("carbs");
+        updateMealMacrosKcal("protein");
+        updateMealMacrosKcal("fat");
       };
     </script>
   </body>

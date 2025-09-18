@@ -95,7 +95,29 @@ function addFoodItemsSection() {
 
   const mealSections = DAILY_MEALS.map((item) => {
     return `<div class="meals" id="meal-${item}">
-              <div class="meal-name"><strong>${item}</strong></div>
+              <div class="meal-name">
+                <span style="margin-right: 1rem;"><strong>${item}</strong></span>
+                <span class="mealMacros">
+                  <span class="mealMacrosCal mealMacrosCalCarbs">
+                    <span>CARBS</span>
+                    <span>
+                      <span class="mealMacrosCalGrams-carbs">0 g</span> <span class="mealMacrosCalKcal-carbs">(0 kcal)</span>
+                    </span>
+                  </span>
+                  <span class="mealMacrosCal mealMacrosCalProtein">
+                    <span>PROTEIN</span>
+                    <span>
+                      <span class="mealMacrosCalGrams-protein">0 g</span> <span class="mealMacrosCalKcal-protein">(0 kcal)</span>
+                    </span>
+                  </span>
+                  <span class="mealMacrosCal mealMacrosCalFat">
+                    <span>FAT</span>
+                    <span>
+                      <span class="mealMacrosCalGrams-fat">0 g</span> <span class="mealMacrosCalKcal-fat">(0 kcal)</span>
+                    </span>
+                  </span>
+                </span>
+              </div>
               <div class="card text-light bg-dark mb-3 px-0 fooditems">
                 ${foodElements.join("")}
               </div>
@@ -144,7 +166,7 @@ function updateFoodGroupGrams() {
       .map((i, el) => Number($(el).val()))
       .get()
       .reduce((sum, val) => sum + val, 0);
-    console.log(mealTotalGrams);
+    //console.log(mealTotalGrams);
   });
 }
 
@@ -188,8 +210,44 @@ function updateDynamicFoodItemMacros() {
       $(this)
         .closest(".list-group-item")
         .find(`.cal-macro-line-${fooditem.name}-kcal`)
-        .text(macroKcal + "kcal");
+        .text(macroKcal + " kcal");
     });
+  });
+}
+
+function updateMealMacrosGrams(macro) {
+  $(".fooditemgrams").on("input", function () {
+    const macroTotalGramsPerMeal = $(this)
+      .closest(".card")
+      .find(`.cal-macro-line-${macro}-grams`)
+      .map((i, el) => Number($(el).text().replace(" g", "")))
+      .get()
+      .reduce((sum, val) => sum + val, 0);
+
+    //Update the total carbs grams per meal
+    $(this)
+      .closest(".meals")
+      .find(`.mealMacrosCalGrams-${macro}`)
+      .text(`${macroTotalGramsPerMeal} g`);
+  });
+}
+
+function updateMealMacrosKcal(macro) {
+  $(".fooditemgrams").on("input", function () {
+    const macroTotalKcalPerMeal = $(this)
+      .closest(".card")
+      .find(`.cal-macro-line-${macro}-kcal`)
+      .map((i, el) => {
+        return Number($(el).text().replace(" kcal", ""));
+      })
+      .get()
+      .reduce((sum, val) => sum + val, 0);
+
+    //Update the total carbs grams per meal
+    $(this)
+      .closest(".meals")
+      .find(`.mealMacrosCalKcal-${macro}`)
+      .text(`(${macroTotalKcalPerMeal} kcal)`);
   });
 }
 
