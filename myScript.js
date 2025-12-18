@@ -225,6 +225,7 @@ async function newCountDownSeconds(
 slideToggleContent();
 updateSection("#myTenets");
 updateSection("#myFavExercBW");
+updateSection("#mySportNotes");
 updateSection("#myFavExerc");
 updateSection("#workoutType1");
 updateSection("#calisthenicsSkills");
