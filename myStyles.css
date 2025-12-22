@@ -116,6 +116,12 @@ body{
     margin-right: 0.5rem;
   }
 
+#counters{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
   #countdown div {
     padding-bottom: 0;
     max-width: 50rem;
@@ -130,6 +136,11 @@ body{
     display: flex
 
   }
+
+#countdown .card,#timeBasedExercises .card{
+  min-width: 25rem;
+  height: 14rem;
+}
 
   #countdown span {
     margin: 5px;

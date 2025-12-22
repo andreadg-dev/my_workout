@@ -113,102 +113,93 @@
       </p>
 
       <!-- Simple minutes countdown timer -->
-      <section id="countdown">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header bg-dark text-white">
-                  <h4 class="mb-0">Countdown</h4>
-                </div>
-                <div class="card-body">
-                  <div class="row text-center">
-                    <div class="col-3">
-                      <h3 id="minutes" class="display-4">--</h3>
-                      <p>Min</p>
-                    </div>
-                    <div class="col-3">
-                      <h3 id="seconds" class="display-4">--</h3>
-                      <p>Sec</p>
-                    </div>
+      <div id="counters">
+        <section id="countdown">
+          <div class="container">
+            <div class="card">
+              <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Countdown</h4>
+              </div>
+              <div class="card-body">
+                <div class="row text-center">
+                  <div class="col-3">
+                    <h3 id="minutes" class="display-4">--</h3>
+                    <p>Min</p>
+                  </div>
+                  <div class="col-3">
+                    <h3 id="seconds" class="display-4">--</h3>
+                    <p>Sec</p>
                   </div>
                 </div>
-                <div class="card-footer text-muted">
-                  <div class="row align-items-center">
-                    <div class="col">
-                      <p class="controlBtn" id="minusBtn">-</p>
-                      <!-- <button class="btn btn-light controlBtn">-</button> -->
-                    </div>
-                    <div class="col">
-                      <p id="countdownBtn">10</p>
-                      <!-- <button class="btn btn-light" id="countdownBtn">5</button> -->
-                    </div>
-                    <div class="col">
-                      <p class="controlBtn" id="plusBtn">+</p>
-                      <!-- <button class="btn btn-light controlBtn">+</button> -->
-                    </div>
+              </div>
+              <div class="card-footer text-muted">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <p class="controlBtn" id="minusBtn">-</p>
+                    <!-- <button class="btn btn-light controlBtn">-</button> -->
+                  </div>
+                  <div class="col">
+                    <p id="countdownBtn">10</p>
+                    <!-- <button class="btn btn-light" id="countdownBtn">5</button> -->
+                  </div>
+                  <div class="col">
+                    <p class="controlBtn" id="plusBtn">+</p>
+                    <!-- <button class="btn btn-light controlBtn">+</button> -->
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="timeBasedExercises">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col">
-              <div class="card">
-                <div class="card-header bg-dark text-white">
-                  <h4 class="mb-0">Time-based exercises</h4>
-                </div>
-                <div class="card-body">
-                  <h3 id="setTitle"></h3>
-                  <h3 id="timeBasedExercisesSeconds" class="display-4">--</h3>
-                </div>
-                <div class="card-footer text-muted">
-                  <div class="row align-items-center">
-                    <div class="col">
-                      <label for="numOfExercises">&#x1f4aa;</label>
-                      <input
-                        type="number"
-                        name="numOfExercises"
-                        id="numOfExercises"
-                        min="1"
-                        value="4"
-                      />
-                    </div>
-                    <div class="col">
-                      <label for="timeForSet"
-                        ><i class="bi bi-clock"></i
-                      ></label>
-                      <input
-                        type="number"
-                        name="timeForSet"
-                        id="timeForSet"
-                        min="10"
-                        value="40"
-                      />
-                    </div>
-                    <div class="col">
-                      <label for="timeForRest">&#128164;</label>
-                      <input
-                        type="number"
-                        name="timeForRest"
-                        id="timeForRest"
-                        min="5"
-                        value="20"
-                      />
-                    </div>
+        <section id="timeBasedExercises">
+          <div class="container">
+            <div class="card">
+              <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Time-based exercises</h4>
+              </div>
+              <div class="card-body">
+                <h3 id="setTitle"></h3>
+                <h3 id="timeBasedExercisesSeconds" class="display-4">--</h3>
+              </div>
+              <div class="card-footer text-muted">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <label for="numOfExercises">&#x1f4aa;</label>
+                    <input
+                      type="number"
+                      name="numOfExercises"
+                      id="numOfExercises"
+                      min="1"
+                      value="4"
+                    />
+                  </div>
+                  <div class="col">
+                    <label for="timeForSet"><i class="bi bi-clock"></i></label>
+                    <input
+                      type="number"
+                      name="timeForSet"
+                      id="timeForSet"
+                      min="10"
+                      value="40"
+                    />
+                  </div>
+                  <div class="col">
+                    <label for="timeForRest">&#128164;</label>
+                    <input
+                      type="number"
+                      name="timeForRest"
+                      id="timeForRest"
+                      min="5"
+                      value="20"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+      </div>
       <!-- My tenets -->
       <section id="myTenets">
         <button type="button" class="btn btn-info btn-lg w-100">
@@ -526,7 +517,7 @@
       <!-- Workout session type #1 -->
       <section id="workoutType1">
         <button type="button" class="btn btn-dark btn-lg w-100">
-          WORKOUT EXAMPLE #1
+          WORKOUT EXAMPLES
         </button>
         <div style="display: none; margin: auto">
           <div class="row">
@@ -534,8 +525,8 @@
               <div class="card-header"><strong>Day 1</strong></div>
               <div class="card-body">
                 <p class="card-text">
-                  All sets are 20RM load with 1x myorep pauses. 30s breaks
-                  between all sets.
+                  All sets are 20RM (Repetition Max) load with 1x myorep pauses.
+                  30s breaks between all sets.
                 </p>
                 <ul>
                   <li>2 sets BENCH PRESS &gt; superset to &gt; PULLUPS</li>
@@ -557,8 +548,8 @@
               <div class="card-header"><strong>Day 2</strong></div>
               <div class="card-body">
                 <p class="card-text">
-                  All sets are 20RM load with 1x myorep pauses. 30s breaks
-                  between all sets.
+                  All sets are 20RM (Repetition Max) load with 1x myorep pauses.
+                  30s breaks between all sets.
                 </p>
                 <ul>
                   <li>
@@ -591,6 +582,26 @@
                   <li>TRICEP EXTENSIONS</li>
                   <li>FRONT RAISES</li>
                   <li>CALVES EXTENSIONS</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card col-md-5 col-sm-12 text-dark bg-light mb-3 px-0">
+              <div class="card-header"><strong>Day 4</strong></div>
+              <div class="card-body">
+                <p class="card-text">
+                  AMRAP circuits with sets to failure for 20 minutes or normal
+                  sets (3/4 sets)
+                </p>
+                <ul>
+                  <li>INCLINE DUMBELL PRESS</li>
+                  <li>SMITH MACHINE SQUATS</li>
+                  <li>SHOULDER-WIDTH OVERHAND PULL-UPS</li>
+                  <li>DIPS</li>
+                  <li>CALF RAISES</li>
+                  <li>DUAL CABLE LATERAL RAISES</li>
+                  <li>ROMANIAN DEADLIFTS</li>
+                  <li>BENCH INCLINE BICEP CURLS</li>
+                  <li>DUMBELL OVERHEAD TRICEP EXTENSIONS</li>
                 </ul>
               </div>
             </div>
